@@ -13,6 +13,7 @@ public class Enemy : Health
     public EnemyTypes enemyType;
 
     [Header("Detection")]
+    [SerializeField] private LayerMask playerMask;
     [SerializeField] private float detectionRange = 15f;
     [SerializeField] private float attackRange = 2.5f;
     [SerializeField] private float shootRange = 10f;
@@ -25,9 +26,15 @@ public class Enemy : Health
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform firePoint;
 
+
+    private bool laserActive;
+    private float laserEndTime;
+    private Vector3 laserEnd;
+
     [Header("Shooter Laser")]
     [SerializeField] private LineRenderer laser;
-    [SerializeField] private float laserDuration = 0.05f;
+    [SerializeField] private float laserFollowSpeed = 6f;
+    [SerializeField] private float laserActiveTime = 0.6f;
 
     [Header("Audio")]
     public AudioClip[] noiseIdk;
@@ -35,6 +42,7 @@ public class Enemy : Health
     private NavMeshAgent agent;
     private Transform player;
     private float lastAttackTime;
+
 
     public EnemyStates CurrentState
     {
@@ -76,7 +84,11 @@ public class Enemy : Health
         base.Start();
 
         agent = GetComponent<NavMeshAgent>();
-        player = GameObject.FindGameObjectWithTag("Player")?.transform;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        agent.updateUpAxis = false;
+        agent.updateRotation = false;
+        if (laser != null)
+            laser.enabled = false;
 
         CurrentState = EnemyStates.Idle;
     }
@@ -85,7 +97,7 @@ public class Enemy : Health
     {
         if (currentState == EnemyStates.Dead || player == null) return;
 
-        float distance = Vector3.Distance(transform.position, player.position);
+        float distance = Vector3.Distance(transform.position, new Vector3(player.position.x,player.position.y,0f));
 
         switch (enemyType)
         {
@@ -119,13 +131,15 @@ public class Enemy : Health
     private void Chase()
     {
         agent.isStopped = false;
-        agent.SetDestination(player.position);
+        agent.SetDestination(new Vector3(player.position.x,player.position.y, 0f)); 
     }
 
     private void Attack()
     {
         agent.isStopped = true;
+        laserEnd = Vector3.zero;
     }
+
 
     private void Staggered()
     {
@@ -158,15 +172,15 @@ public class Enemy : Health
             CurrentState = EnemyStates.Attack;
             ShootRay();
         }
-        else if (distance <= detectionRange)
-        {
-            CurrentState = EnemyStates.Chase;
-        }
         else
         {
-            CurrentState = EnemyStates.Idle;
+            if (laser != null) laser.enabled = false;
+            laserActive = false;
+            CurrentState = EnemyStates.Chase;
         }
     }
+
+
 
     private void HandleProjectile(float distance)
     {
@@ -180,7 +194,7 @@ public class Enemy : Health
             CurrentState = EnemyStates.Idle;
         }
     }
-    // THEIR ATTACK METHOSD
+    // THEIR ATTACK METHODS
 
     private void MeleeExplode()
     {
@@ -196,45 +210,74 @@ public class Enemy : Health
 
     private void ShootRay()
     {
-        if (Time.time < lastAttackTime + attackCooldown) return;
-
-        lastAttackTime = Time.time;
+        if (laser == null) return;
 
         Vector3 start = firePoint != null ? firePoint.position : transform.position;
-        Vector3 direction = (player.position - start).normalized;
 
-        Vector3 end = start + direction * shootRange;
-
-        if (Physics.Raycast(start, direction, out RaycastHit hit, shootRange))
+        // Start laser ONLY if cooldown finished
+        if (!laserActive && Time.time >= lastAttackTime + attackCooldown)
         {
-            end = hit.point;
-
-            if (hit.collider.CompareTag("Player"))
-            {
-                GameManager.Instance.Health -= meleeDamage;
-            }
+            laserActive = true;
+            laserEndTime = Time.time + laserActiveTime;
+            laserEnd = start;
         }
 
-        DrawLaser(start, end);
+        if (!laserActive)
+        {
+            laser.enabled = false;
+            return;
+        }
+
+        // End laser → start cooldown
+        if (Time.time >= laserEndTime)
+        {
+            laserActive = false;
+            laser.enabled = false;
+            lastAttackTime = Time.time; 
+            return;
+        }
+
+        // Laser follows player with delay :00 
+        Vector3 desiredDir = (player.position - start).normalized;
+        Vector3 desiredEnd = start + desiredDir * shootRange;
+
+        laserEnd = Vector3.Lerp(
+            laserEnd,
+            desiredEnd,
+            Time.deltaTime * laserFollowSpeed
+        );
+
+        Vector2 rayDir = (laserEnd - start).normalized;
+
+        RaycastHit2D hitInfo = Physics2D.Raycast(start, rayDir, shootRange, playerMask);
+
+        // If it id hit something, adjust the end point of the laser
+        Vector3 finalEnd = hitInfo.collider != null ? hitInfo.point: start + (Vector3)rayDir * shootRange;
+
+        DrawLaser(start, finalEnd);
+
+        // Damaging the player over time (without time.delta Time its basically instant death lmao)
+        if (hitInfo.collider != null && hitInfo.collider.CompareTag("Player"))
+        {
+            GameManager.Instance.Health -= rayDamage * Time.deltaTime;
+        }
     }
+
+
+
 
     private void DrawLaser(Vector3 start, Vector3 end)
     {
         if (laser == null) return;
 
-        laser.SetPosition(0, start);
-        laser.SetPosition(1, end);
+        laser.enabled = true;         
+        laser.positionCount = 2;       
+        laser.useWorldSpace = true;
 
-        StopAllCoroutines();
-        StartCoroutine(LaserRoutine());
+        laser.SetPosition(0, new Vector3(start.x, start.y, 0f));
+        laser.SetPosition(1, new Vector3(end.x, end.y, 0f));
     }
 
-    private IEnumerator LaserRoutine()
-    {
-        laser.enabled = true;
-        yield return new WaitForSeconds(laserDuration);
-        laser.enabled = false;
-    }
 
     private void ShootProjectile()
     {
