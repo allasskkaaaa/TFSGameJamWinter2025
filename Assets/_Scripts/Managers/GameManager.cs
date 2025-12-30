@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
     private int score; 
     public UnityEvent<int> OnScoreValueChanged; 
 
-    public int Health
+    public float Health
     {
         get => health;
         set
@@ -58,7 +58,10 @@ public class GameManager : MonoBehaviour
             health = value;
 
             if (OnHealthValueChanged != null)
+            {
                 OnHealthValueChanged.Invoke(health);
+                Debug.Log("Player Health changed to: " + health);
+            }
 
             if (health <= 0 && currentState != GameState.GameOver)
             {
@@ -67,8 +70,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public UnityEvent<int> OnHealthValueChanged;
-    private int health;
+    public UnityEvent<float> OnHealthValueChanged;
+    private float health = 100f;
 
 
     public GameState GetGameState()
