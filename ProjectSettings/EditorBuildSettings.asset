@@ -5,9 +5,24 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/MainScenes/GameScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/_Scenes/RaesTestScenes/TestScene 1.unity
+    guid: 06e6185a2dc33ae448044c95b40ac54e
+  - enabled: 1
+    path: Assets/_Scenes/RaesTestScenes/TestScene 2.unity
+    guid: 1937227b5e4e74540a342099fbc20366
+  - enabled: 1
+    path: Assets/_Scenes/RaesTestScenes/TestScene 3.unity
+    guid: c8b4ee0b2b6f6354b9032c18fba39d74
+  - enabled: 1
+    path: Assets/_Scenes/RaesTestScenes/TestScene 4.unity
+    guid: cc453adc19cae7249a97f645266c9f23
+  - enabled: 1
+    path: Assets/_Scenes/RaesTestScenes/TestScene 5.unity
+    guid: ed02eff7e8d869f43b7c2a9c6be5186a
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
