@@ -33,6 +33,7 @@ Transform:
   - {fileID: 237699771413356671}
   - {fileID: 1084863904557840272}
   - {fileID: 179280015901208730}
+  - {fileID: 5607543247661342022}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2216048050058810193
@@ -122,6 +123,103 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &8238021579844746342
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5607543247661342022}
+  - component: {fileID: 4855716403804994193}
+  m_Layer: 0
+  m_Name: Border
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5607543247661342022
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8238021579844746342}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5305355037735079443}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &4855716403804994193
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8238021579844746342}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0.34
+  m_Points:
+  - {x: 6.082085, y: 2.3481767}
+  - {x: 5.3783703, y: 2.3576126}
+  - {x: 5.332879, y: 2.9164228}
+  - {x: 4.5403333, y: 3.7749982}
+  - {x: 3.6463635, y: 3.9441261}
+  - {x: 2.910046, y: 3.6226277}
+  - {x: 2.3477948, y: 2.9964397}
+  - {x: 2.2926126, y: 2.3526263}
+  - {x: 1.5604335, y: 2.3521602}
+  - {x: 1.5531582, y: 2.8983169}
+  - {x: 0.7222753, y: 3.7601852}
+  - {x: -0.80687565, y: 3.7436724}
+  - {x: -1.4032177, y: 3.0646687}
+  - {x: -1.5504574, y: 2.3235276}
+  - {x: -2.2128682, y: 2.3389502}
+  - {x: -2.332418, y: 3.096591}
+  - {x: -3.2772014, y: 3.8483715}
+  - {x: -4.398094, y: 3.810077}
+  - {x: -5.1549077, y: 3.243492}
+  - {x: -5.3198338, y: 2.3174756}
+  - {x: -6.108579, y: 2.3120048}
+  - {x: -6.097986, y: -7.810186}
+  - {x: 6.108701, y: -7.822881}
+  - {x: 6.123249, y: 2.3135884}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1001 &832851892046719112
 PrefabInstance:
   m_ObjectHideFlags: 0
