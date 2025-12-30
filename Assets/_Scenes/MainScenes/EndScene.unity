@@ -227,6 +227,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   playerRigidbody: {fileID: 295528406}
+  animator: {fileID: 0}
+  spriteComponents: []
+  tr: {fileID: 295528408}
 --- !u!58 &295528405
 CircleCollider2D:
   m_ObjectHideFlags: 0
