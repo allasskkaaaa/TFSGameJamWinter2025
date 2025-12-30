@@ -40,7 +40,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -54,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -116,15 +116,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Elf_1_0
+      name: Elf_1_Head
       rect:
         serializedVersion: 2
-        x: 2
-        y: 10
-        width: 18
-        height: 14
+        x: 3
+        y: 12
+        width: 12
+        height: 11
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -138,15 +138,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Elf_1_1
+      name: Elf_1_Body
       rect:
         serializedVersion: 2
-        x: 5
-        y: 2
-        width: 14
-        height: 10
+        x: 6
+        y: 3
+        width: 8
+        height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -159,11 +159,55 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Elf_1_Leg
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 7
+        width: 2
+        height: 2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45d7b24c04e4af84ea2b2e00b4702c26
+      internalID: -614381415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elf_1_Arm
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 11
+        width: 3
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25737b7abb4eda94da1a4000ab867a3b
+      internalID: 796700682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 2f0e9ce78319c5b4a8dad9e227e475da
     internalID: 0
     vertices: []
     indices: 
@@ -172,7 +216,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Elf_1_Arm: 796700682
+      Elf_1_Body: 9192335604100010203
+      Elf_1_Head: -7148242121876300252
+      Elf_1_Leg: -614381415
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
