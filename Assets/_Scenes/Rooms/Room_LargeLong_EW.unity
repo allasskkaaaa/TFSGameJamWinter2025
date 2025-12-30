@@ -167,9 +167,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6012675742286111338, guid: 5242ce30087bde34aa15d4bc695e63ca, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6012675742286111338, guid: 5242ce30087bde34aa15d4bc695e63ca, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6012675742286111338, guid: 5242ce30087bde34aa15d4bc695e63ca, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6783406726580580788, guid: 5242ce30087bde34aa15d4bc695e63ca, type: 3}
       propertyPath: m_Name
       value: Room_LargeLong_EW
+      objectReference: {fileID: 0}
+    - target: {fileID: 8238507107501376012, guid: 5242ce30087bde34aa15d4bc695e63ca, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8238507107501376012, guid: 5242ce30087bde34aa15d4bc695e63ca, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8238507107501376012, guid: 5242ce30087bde34aa15d4bc695e63ca, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

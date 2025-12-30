@@ -146,7 +146,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1444936389399261898, guid: 30977f2196e45fb43863d8833341fc9d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.62
+      value: -6.8
       objectReference: {fileID: 0}
     - target: {fileID: 1444936389399261898, guid: 30977f2196e45fb43863d8833341fc9d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -183,6 +183,22 @@ PrefabInstance:
     - target: {fileID: 3289932215548576279, guid: 30977f2196e45fb43863d8833341fc9d, type: 3}
       propertyPath: m_Name
       value: South_Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 9027909822000705877, guid: 30977f2196e45fb43863d8833341fc9d, type: 3}
+      propertyPath: m_Size.x
+      value: 1.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 9027909822000705877, guid: 30977f2196e45fb43863d8833341fc9d, type: 3}
+      propertyPath: m_Size.y
+      value: 0.5434016
+      objectReference: {fileID: 0}
+    - target: {fileID: 9027909822000705877, guid: 30977f2196e45fb43863d8833341fc9d, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.6282992
+      objectReference: {fileID: 0}
+    - target: {fileID: 9027909822000705877, guid: 30977f2196e45fb43863d8833341fc9d, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -62,6 +62,9 @@ public class PlayerController : MonoBehaviour
             {
                     spriteComponent.flipX = false;
             }
+        } else
+        {
+            Debug.Log("No sprite components set");
         }
     }
 }
