@@ -112,14 +112,28 @@ public class RoomGenerator : MonoBehaviour
     void ConnectAuto(string a, string b)
     {
         if (a == b) return;
+
         if (graph[a].Count >= 4 || graph[b].Count >= 4) return;
 
-        Direction dirA = GetFreeDirection(a);
+        List<Direction> possibleDirs = new List<Direction>();
+
+        foreach (Direction d in Enum.GetValues(typeof(Direction)))
+        {
+            Direction opp = Opposite(d);
+
+            if (!graph[a].ContainsKey(d) && !graph[b].ContainsKey(opp))
+                possibleDirs.Add(d);
+        }
+
+        if (possibleDirs.Count == 0) return;
+
+        Direction dirA = possibleDirs[UnityEngine.Random.Range(0, possibleDirs.Count)];
         Direction dirB = Opposite(dirA);
 
         graph[a][dirA] = b;
         graph[b][dirB] = a;
     }
+
 
     // Get a random free direction in the given scene 
     Direction GetFreeDirection(string scene)
