@@ -112,7 +112,7 @@ public class PlayerController : MonoBehaviour
                 else
                 {
                     spriteComponent.flipX = false;
-                }
+            }
         }
     }
 

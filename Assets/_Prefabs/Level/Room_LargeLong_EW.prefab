@@ -131,19 +131,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1520765009559084460, guid: d4496f535c740b449972cfd0fed662c9, type: 3}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1520765009559084460, guid: d4496f535c740b449972cfd0fed662c9, type: 3}
       propertyPath: m_LocalScale.y
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1520765009559084460, guid: d4496f535c740b449972cfd0fed662c9, type: 3}
       propertyPath: m_LocalScale.z
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1520765009559084460, guid: d4496f535c740b449972cfd0fed662c9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.18
+      value: 10.9
       objectReference: {fileID: 0}
     - target: {fileID: 1520765009559084460, guid: d4496f535c740b449972cfd0fed662c9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -181,6 +181,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1987553756473107653, guid: d4496f535c740b449972cfd0fed662c9, type: 3}
+      propertyPath: m_Size.x
+      value: 0.9348669
+      objectReference: {fileID: 0}
+    - target: {fileID: 1987553756473107653, guid: d4496f535c740b449972cfd0fed662c9, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.1515441
+      objectReference: {fileID: 0}
+    - target: {fileID: 1987553756473107653, guid: d4496f535c740b449972cfd0fed662c9, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959845853470324765, guid: d4496f535c740b449972cfd0fed662c9, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6739924317717330463, guid: d4496f535c740b449972cfd0fed662c9, type: 3}
       propertyPath: m_Name
       value: East_Door
@@ -205,19 +221,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 716648877447108626, guid: d57d8c41fe14c4349b3a3f5bd15680c2, type: 3}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 716648877447108626, guid: d57d8c41fe14c4349b3a3f5bd15680c2, type: 3}
       propertyPath: m_LocalScale.y
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 716648877447108626, guid: d57d8c41fe14c4349b3a3f5bd15680c2, type: 3}
       propertyPath: m_LocalScale.z
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 716648877447108626, guid: d57d8c41fe14c4349b3a3f5bd15680c2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.18
+      value: -10.9
       objectReference: {fileID: 0}
     - target: {fileID: 716648877447108626, guid: d57d8c41fe14c4349b3a3f5bd15680c2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -258,6 +274,14 @@ PrefabInstance:
     - target: {fileID: 6076063412544829896, guid: d57d8c41fe14c4349b3a3f5bd15680c2, type: 3}
       propertyPath: m_Name
       value: West_Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 6612712603199182071, guid: d57d8c41fe14c4349b3a3f5bd15680c2, type: 3}
+      propertyPath: m_Size.x
+      value: 0.80179745
+      objectReference: {fileID: 0}
+    - target: {fileID: 6612712603199182071, guid: d57d8c41fe14c4349b3a3f5bd15680c2, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.17589876
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
