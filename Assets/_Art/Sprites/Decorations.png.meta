@@ -619,7 +619,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Q_BigGift_Li
+      name: F_BigGift_Lid
       rect:
         serializedVersion: 2
         x: 172
@@ -662,6 +662,7 @@ TextureImporter:
       Decorations_25: 2125830533
       Door_Front: -706444031
       Door_Side: 1042174153
+      F_BigGift_Lid: 2114247248
       F_LargeGift_Box: 1742706255
       F_LargeGift_Ribbon: -1216141554
       F_SmallGift_Box: 953613211
@@ -670,7 +671,6 @@ TextureImporter:
       Floor: 1751685860
       LongRug: -1188596800
       Q_BigGift_Box: 1124717232
-      Q_BigGift_Li: 2114247248
       Q_BigGift_Lid: -1353471808
       Q_LargeGift_Ribbon: 2125599892
       Q_SmallGift_Box: -1607896264
