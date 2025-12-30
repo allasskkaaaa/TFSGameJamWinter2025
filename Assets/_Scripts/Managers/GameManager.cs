@@ -59,6 +59,11 @@ public class GameManager : MonoBehaviour
 
             if (OnHealthValueChanged != null)
                 OnHealthValueChanged.Invoke(health);
+
+            if (health <= 0 && currentState != GameState.GameOver)
+            {
+                SwitchState(GameState.GameOver);
+            }
         }
     }
 
