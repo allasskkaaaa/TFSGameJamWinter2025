@@ -1,3 +1,4 @@
+using System.Numerics;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -15,30 +16,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame (constantly running)
     void Update()
     {
-        // player goes up
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            playerRigidbody.linearVelocity = new Vector2(playerRigidbody.linearVelocity.x, speed);
-        }
-        // player goes down
-        else if (Input.GetKey(KeyCode.DownArrow))
-        {
-            playerRigidbody.linearVelocity = new Vector2(playerRigidbody.linearVelocity.x, -speed);
-        }
-        // player goes right
-        else if (Input.GetKey(KeyCode.RightArrow))
-        {
-            playerRigidbody.linearVelocity = new Vector2(speed, playerRigidbody.linearVelocity.y);
-        }
-        // player goes left
-        else if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            playerRigidbody.linearVelocity = new Vector2(-speed, playerRigidbody.linearVelocity.y);
-        }
-        else
-        {
-            playerRigidbody.linearVelocity = Vector2.zero;
-        }
+        UnityEngine.Vector2 moveVec = new UnityEngine.Vector2( Input.GetAxis("Horizontal") , Input.GetAxis("Vertical") );
+        transform.position += (UnityEngine.Vector3)moveVec * speed * Time.deltaTime;
     }
 }
 
