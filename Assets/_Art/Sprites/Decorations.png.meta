@@ -1595,7 +1595,7 @@ TextureImporter:
         width: 10
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1617,7 +1617,7 @@ TextureImporter:
         width: 7
         height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1639,7 +1639,7 @@ TextureImporter:
         width: 10
         height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1648,6 +1648,28 @@ TextureImporter:
       bones: []
       spriteID: ac562909c7fdc7c40ba087cd148f0876
       internalID: 1458991071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dialogue_NeedKey
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 204
+        width: 103
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12a2383ec624bb346842697ce5e0fe43
+      internalID: 1908616465
       vertices: []
       indices: 
       edges: []
@@ -1675,6 +1697,7 @@ TextureImporter:
       Decorations_19: 443069499
       Decorations_22: 1940897871
       Decorations_25: 2113624463
+      Dialogue_NeedKey: 1908616465
       Door_Front: -706444031
       Door_Side: 1042174153
       F_BigGift_Lid: 2114247248

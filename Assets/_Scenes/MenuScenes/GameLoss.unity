@@ -434,8 +434,7 @@ PrefabInstance:
     - target: {fileID: 7901126364600285280, guid: bad8d246553f1584689681f1233f7d01, type: 3}
       propertyPath: m_text
       value: Thanks to your shenanigans, You and all the elves have been kicked from
-        the workshop immediately. You're now hated by the elvish populace. Way to
-        go
+        the workshop immediately. You're now hated by the elvish populace, congratulations!
       objectReference: {fileID: 0}
     - target: {fileID: 7901126364600285280, guid: bad8d246553f1584689681f1233f7d01, type: 3}
       propertyPath: m_fontSize
