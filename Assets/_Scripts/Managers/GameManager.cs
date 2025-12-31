@@ -9,7 +9,11 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-    
+    [Header("Audio")]
+    [SerializeField] private AudioSource musicSource;
+    [SerializeField] private AudioClip gameplayMusic;
+ 
+
     public enum GameState
     {
         MainMenu,
@@ -35,12 +39,29 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
         }
 
+
         // ensure sane defaults
         if (maxHealth <= 0f) maxHealth = 100f;
         if (health <= 0f) health = maxHealth;
     }
 
-//score
+    public void PlayMusic(AudioClip clip)
+    {
+        if (clip == null || musicSource == null) return;
+        if (musicSource.clip == clip) return;
+
+        musicSource.Stop();
+        musicSource.clip = clip;
+        musicSource.Play();
+    }
+
+    public void StopMusic()
+    {
+        if (musicSource == null) return;
+        musicSource.Stop();
+    }
+
+    //score
     public int Score
     {
         get => score; 
@@ -182,13 +203,25 @@ public class GameManager : MonoBehaviour
         currentState = newState;
         OnGameStateChanged?.Invoke();
 
-        if (currentState == GameState.GameOver)
+        switch (currentState)
         {
-            GameOver();
-        }
-        if (currentState == GameState.GameWin)
-        {
-            GameWin();
+            case GameState.MainMenu:
+                break;
+
+            case GameState.Playing:
+                PlayMusic(gameplayMusic);
+                break;
+
+            case GameState.GameOver:
+                StopMusic();
+                GameOver();
+                break;
+
+            case GameState.GameWin:
+                StopMusic();
+                GameWin();
+                break;
         }
     }
+
 }

@@ -427,6 +427,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1555185223}
     m_Modifications:
+    - target: {fileID: 4124398463128731274, guid: c97e4cca64d4ab442ae7811e61b0d2d7, type: 3}
+      propertyPath: musicSource
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4124398463128731274, guid: c97e4cca64d4ab442ae7811e61b0d2d7, type: 3}
+      propertyPath: gameplayMusic
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4124398463128731274, guid: c97e4cca64d4ab442ae7811e61b0d2d7, type: 3}
+      propertyPath: mainMenuMusic
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7929400613216875709, guid: c97e4cca64d4ab442ae7811e61b0d2d7, type: 3}
       propertyPath: m_Name
       value: GameManager
