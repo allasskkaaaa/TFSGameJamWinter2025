@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 // public class ItemController : MonoBehaviour
 // {
@@ -106,7 +107,7 @@ public class ItemController : MonoBehaviour
         }
 
         // DROP / THROW (tired of ts, leaving it to rae)
-        if (Input.GetKeyDown(KeyCode.Space) && grabbedItem != null)
+        if (Input.GetMouseButton(0) && grabbedItem != null)
         {
             DropOrThrow();
         }
@@ -211,6 +212,8 @@ public class ItemController : MonoBehaviour
     {
         var rb = grabbedItem.GetComponent<Rigidbody2D>();
         var col = grabbedItem.GetComponent<Collider2D>();
+        
+        StartCoroutine(IgnorePlayerMomentarily(rb, col));
 
         if (col) col.isTrigger = false;
 
@@ -229,5 +232,17 @@ public class ItemController : MonoBehaviour
 
         grabbedItem.transform.SetParent(null);
         grabbedItem = null;
+    }
+
+    IEnumerator IgnorePlayerMomentarily(Rigidbody2D rb, Collider2D col)
+    {
+        col.excludeLayers = LayerMask.GetMask("Player");
+        rb.excludeLayers = LayerMask.GetMask("Player"); 
+
+        yield return new WaitForSeconds(0.5f);
+
+        col.includeLayers = LayerMask.GetMask("Player");
+        rb.excludeLayers = LayerMask.GetMask("Player");
+
     }
 }

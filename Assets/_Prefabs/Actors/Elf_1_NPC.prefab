@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 514619325203731608}
   - component: {fileID: 1791307387562133648}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Elf_1_Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1360655178221572330}
   - component: {fileID: 6158350678595504475}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Elf_1_Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   m_Component:
   - component: {fileID: 104458445300410633}
   - component: {fileID: 3114007825215678940}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Elf_1_Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,7 +271,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1808362030814176765}
   - component: {fileID: 2258648859744826532}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Elf_1_Leg2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -361,7 +361,7 @@ GameObject:
   - component: {fileID: 7409774921378838686}
   - component: {fileID: 674275668451814573}
   - component: {fileID: 2462997799434660193}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Elf_1_NPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -506,7 +506,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1366589678556748569}
   - component: {fileID: 5098514929433569506}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Elf_1_Arm_Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -593,7 +593,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6026358531387556953}
   - component: {fileID: 8935812797607835344}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Elf_1_Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -680,7 +680,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5712183966592521539}
   - component: {fileID: 3746658719925544125}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Elf_1_Leg1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
