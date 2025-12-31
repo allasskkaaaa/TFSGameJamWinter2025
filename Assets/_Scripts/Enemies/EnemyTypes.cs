@@ -1,4 +1,4 @@
 public enum EnemyTypes
 {
-    Projectile, Shooter, Melee
+    Projectile, Shooter, Melee, Boss
 }

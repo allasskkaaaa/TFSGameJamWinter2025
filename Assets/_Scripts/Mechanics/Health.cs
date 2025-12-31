@@ -28,7 +28,7 @@ public class Health : MonoBehaviour, IDamageable
 
     public virtual void Death()
     {
-        anim.SetTrigger("Death");
+        //anim.SetTrigger("Death");
     }
 
     public virtual void Start()

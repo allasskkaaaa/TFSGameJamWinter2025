@@ -55,6 +55,19 @@ public class Bomb : MonoBehaviour
                     StartCoroutine(KnockbackPlayer(hit.transform, knockDir, knockDuration));
                 }
             }
+            if (hit.CompareTag("Boss")) 
+            {
+                BossController boss = hit.GetComponent<BossController>();
+                if (boss != null)
+                {
+                    Debug.Log("HIT BOSS!"); 
+                    boss.TakeDamage(damage);
+                    boss.OnBossHit();
+                }
+            }
+
+
+
         }
 
         Destroy(gameObject); 
