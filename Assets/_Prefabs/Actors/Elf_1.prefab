@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 9101892587497209712}
   - component: {fileID: 6883823496137038549}
   - component: {fileID: 6851741628183508033}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Elf_1
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -179,10 +179,10 @@ MonoBehaviour:
   rayDistance: 1.5
   grabMask:
     serializedVersion: 2
-    m_Bits: 72
+    m_Bits: 64
   grabMode: 0
   showDebugRays: 1
-  throwImpulse: 3
+  throwImpulse: 20
 --- !u!96 &6851741628183508033
 TrailRenderer:
   serializedVersion: 3
@@ -228,7 +228,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 5
+  m_Time: 1
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -237,8 +237,8 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 1
+        time: 0.014842987
+        value: 0.22727394
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -246,7 +246,7 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1
+        time: 0.73654175
         value: 0
         inSlope: 0
         outSlope: 0
@@ -259,7 +259,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 0.64355284, g: 0.93962264, b: 0.6473032, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -309,7 +309,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5288031753777884391}
   - component: {fileID: 4548791795063202146}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Elf_1_Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -396,7 +396,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2916097970608526587}
   - component: {fileID: 3070243533787998008}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Elf_1_Leg1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -483,7 +483,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2842541323102619408}
   - component: {fileID: 7037842029800197514}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Elf_1_Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -570,7 +570,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1159990154411577274}
   - component: {fileID: 1280206624243775926}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Elf_1_Leg2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -657,7 +657,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5842614259497382086}
   - component: {fileID: 1946302268953730558}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Elf_1_Arm_Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -744,7 +744,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1592134430975772160}
   - component: {fileID: 3359774011595417039}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Elf_1_Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -831,7 +831,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1247696119778976571}
   - component: {fileID: 3243557168229848283}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Elf_1_Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}

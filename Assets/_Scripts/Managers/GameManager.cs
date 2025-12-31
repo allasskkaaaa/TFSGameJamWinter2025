@@ -54,6 +54,21 @@ public class GameManager : MonoBehaviour
     private int score; 
     public UnityEvent<int> OnScoreValueChanged; 
 
+    public int Keys
+    {
+        get => keys;
+        set
+        {
+            keys = value;
+            if (OnKeysValueChanged != null)
+            {
+                OnKeysValueChanged.Invoke(keys);
+            }
+        }
+    }
+    private int keys = 0;
+    public UnityEvent<int> OnKeysValueChanged;  
+
     //health
     public float Health
     {
