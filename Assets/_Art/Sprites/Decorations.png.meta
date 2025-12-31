@@ -623,9 +623,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 172
-        y: 144
+        y: 143
         width: 20
-        height: 13
+        height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -636,6 +636,446 @@ TextureImporter:
       bones: []
       spriteID: 4fa3e7181be7c2743b77140ea2f90a6e
       internalID: 2114247248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VerticalTable_Long
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 21
+        width: 21
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66968eb77fe46ec418ef893bfcbb5141
+      internalID: -1872360709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wrench
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 82
+        width: 3
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16f2e818da8e3c848bb08ace2ec46338
+      internalID: 1326755834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WrappingPaperOpen_Red
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 76
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86a9cdfe791d590469a7c9612a5395de
+      internalID: 1046934947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WrappingPaperOpen_Blue
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 78
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cfe41c2112bf484896c93181840e021
+      internalID: -1640234583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VerticalTable_Half
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 21
+        width: 21
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a035c319df8950448bf421ccf3c37ad6
+      internalID: 1097189744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stocking
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 58
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fda498d308fac14386d4e40a30a2a14
+      internalID: 876778331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WrappingPaperOpen_Green
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 48
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a804c44f10f38b44fbf5d4435d2dc1a9
+      internalID: 1612308973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WrappingPaperOpen_Purple
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 52
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a7c31eb793dfac4597fa7a57ab3f1dc
+      internalID: -1587661463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VerticalTable_Short
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 21
+        width: 21
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd67ba006f335f0478baa29b88419260
+      internalID: -692504423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WrappingPaper_Red
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 25
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2938320fbeef8e94d94e04366cebe11b
+      internalID: 203592854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WrappingPaper_Purple
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 25
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b514674cd1f4dfe4bb7bd62b864bb57c
+      internalID: 266204357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WrappingPaper_Green
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 25
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52dc959cabd5769409fa0717bb1ad542
+      internalID: 1008127480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WrappingPaper_Blue
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 4
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb3b3827d49ee0d4b9f192ecea1dd673
+      internalID: -201889933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WrappingPaper_Yellow
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 4
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f1478970e0e6684fbddb3a9e7cd549d
+      internalID: -475772584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hammer
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 82
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6b83f67579ed8b4bb060531875666d1
+      internalID: 826903720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HorizontalTable_Half
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 110
+        width: 43
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb83697afc6fabf4293bea293fc7564f
+      internalID: 1092628456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HorizontalTable_Short
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 110
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03a2924601bd68a4fb60d873621c102c
+      internalID: 589129748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HorizontalTable_Long
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 142
+        width: 68
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 893965ea216bfbf438ac5344469d2aa3
+      internalID: 1405065545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 179
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5435cc0d26ffb194eac71e3d017960e9
+      internalID: -1526922619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PotPlant_ChristmasTree
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 177
+        width: 23
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf03ff3a483c3274f8473ba15583f993
+      internalID: -117557202
       vertices: []
       indices: 
       edges: []
@@ -669,7 +1109,13 @@ TextureImporter:
       F_SmallGift_Lid: 848474995
       F_SmallGift_Ribbon: -1779753699
       Floor: 1751685860
+      Hammer: 826903720
+      HorizontalTable_Half: 1092628456
+      HorizontalTable_Long: 1405065545
+      HorizontalTable_Short: 589129748
       LongRug: -1188596800
+      Notes: -1526922619
+      PotPlant_ChristmasTree: -117557202
       Q_BigGift_Box: 1124717232
       Q_BigGift_Lid: -1353471808
       Q_LargeGift_Ribbon: 2125599892
@@ -678,8 +1124,22 @@ TextureImporter:
       Q_SmallGift_Ribbon: 1073257458
       RoundRugBig: -870041508
       RoundRugSmall: 1664676200
+      Stocking: 876778331
+      VerticalTable_Half: 1097189744
+      VerticalTable_Long: -1872360709
+      VerticalTable_Short: -692504423
+      WrappingPaperOpen_Blue: -1640234583
+      WrappingPaperOpen_Green: 1612308973
+      WrappingPaperOpen_Purple: -1587661463
+      WrappingPaperOpen_Red: 1046934947
+      WrappingPaper_Blue: -201889933
+      WrappingPaper_Green: 1008127480
+      WrappingPaper_Purple: 266204357
+      WrappingPaper_Red: 203592854
+      WrappingPaper_Yellow: -475772584
       Wreath: 4234090705077185718
       WreathLine: -107393438
+      Wrench: 1326755834
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

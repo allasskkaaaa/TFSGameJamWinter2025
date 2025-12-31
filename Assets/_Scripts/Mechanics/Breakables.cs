@@ -5,8 +5,10 @@ public class Breakables : Health
     [SerializeField] private float velocityThreshold = 5f;
     [SerializeField] private int damageTaken;
     [SerializeField] private int scoreOnBreak = 10; 
+    private Animator animator;
     public override void Start()
     {
+        animator = GetComponent<Animator>();
         base.Start(); 
     }
 
@@ -22,6 +24,11 @@ public class Breakables : Health
     public override void Death()
     {
         // Add break animation or effects here if needed 
+        if (this.gameObject.CompareTag("Gift"))
+        {
+            animator.Play("Gift_Destroy");
+        }
+
         GameManager.Instance.Score += scoreOnBreak; 
         Debug.Log($"{gameObject.name} has been broken! Score is now {GameManager.Instance.Score}!");
         GameObject.Destroy(this.gameObject);
