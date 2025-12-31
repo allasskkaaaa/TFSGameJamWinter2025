@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -23,8 +23,7 @@ public class RoomGenerator : MonoBehaviour
     public List<string> scenes;
 
     // Room -> (Direction -> Connected Room)
-    private Dictionary<string, Dictionary<Direction, string>> graph =
-        new Dictionary<string, Dictionary<Direction, string>>();
+    private static Dictionary<string, Dictionary<Direction, string>> graph = new Dictionary<string, Dictionary<Direction, string>>();
 
     private static bool graphGenerated = false;
 
@@ -216,13 +215,18 @@ public class RoomGenerator : MonoBehaviour
         SceneManager.LoadScene(graph[current][dir]);
     }
 
-
     // USE THIS TO MAKE THE DOOR VISIBLE!!
     public bool HasDoor(Direction dir)
     {
         string current = SceneManager.GetActiveScene().name;
+        string start = scenes[0];
+
+        if (current == start && dir == Direction.South)
+            return true;
+
         return graph.ContainsKey(current) && graph[current].ContainsKey(dir);
     }
+
 
     void PrintGraph()
     {
