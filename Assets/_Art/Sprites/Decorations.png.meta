@@ -1507,7 +1507,7 @@ TextureImporter:
         width: 7
         height: 5
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1529,7 +1529,7 @@ TextureImporter:
         width: 9
         height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1551,7 +1551,7 @@ TextureImporter:
         width: 6
         height: 5
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1573,7 +1573,7 @@ TextureImporter:
         width: 6
         height: 3
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1582,6 +1582,72 @@ TextureImporter:
       bones: []
       spriteID: 349649ae55b968f47973f668737f0e0b
       internalID: 1065172046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Full Key
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 48
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ceaac757801e7d4eb3ea410a0d05172
+      internalID: -1831450976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Key_Top
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 59
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8d062410497ba444a7203dc4dcd4e4d
+      internalID: 2129957679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Key_Bottom
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 48
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac562909c7fdc7c40ba087cd148f0876
+      internalID: 1458991071
       vertices: []
       indices: 
       edges: []
@@ -1618,10 +1684,13 @@ TextureImporter:
       F_SmallGift_Lid: 848474995
       F_SmallGift_Ribbon: -1779753699
       Floor: 1751685860
+      Full Key: -1831450976
       Hammer: 826903720
       HorizontalTable_Half: 1092628456
       HorizontalTable_Long: 1405065545
       HorizontalTable_Short: 589129748
+      Key_Bottom: 1458991071
+      Key_Top: 2129957679
       Lantern_Cage: -1511473295
       Lantern_Light: 2045681590
       LongRug: -1188596800

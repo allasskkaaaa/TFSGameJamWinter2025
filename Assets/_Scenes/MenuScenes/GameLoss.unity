@@ -287,6 +287,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 601812430215296569, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 601812430215296569, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 601812430215296569, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 601812430215296569, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 623916118495628604, guid: bad8d246553f1584689681f1233f7d01, type: 3}
       propertyPath: m_Name
       value: MenuCanvas
@@ -371,9 +387,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6248993001525093385, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -4340340098122707235, guid: aeb9a7d77474ff64598973e0679eee21, type: 3}
+    - target: {fileID: 6248993001525093385, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6248993001525093385, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6248993001525093385, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7901126364600285280, guid: bad8d246553f1584689681f1233f7d01, type: 3}
       propertyPath: m_text
       value: You Lost! Try Again?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901126364600285280, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_margin.w
+      value: -348.20807
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901126364600285280, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_margin.x
+      value: -68.30945
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901126364600285280, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_margin.z
+      value: -129.67981
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
