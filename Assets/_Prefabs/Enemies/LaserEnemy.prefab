@@ -155,7 +155,7 @@ MonoBehaviour:
   enemyType: 1
   playerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 129
   detectionRange: 20
   attackRange: 2.5
   shootRange: 10

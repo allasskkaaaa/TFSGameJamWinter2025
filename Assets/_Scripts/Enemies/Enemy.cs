@@ -252,7 +252,7 @@ public class Enemy : Health
         RaycastHit2D hitInfo = Physics2D.Raycast(start, rayDir, shootRange, playerMask);
 
         // If it id hit something, adjust the end point of the laser
-        Vector3 finalEnd = hitInfo.collider != null ? hitInfo.point: start + (Vector3)rayDir * shootRange;
+        Vector3 finalEnd =  start + (Vector3)rayDir * shootRange;
 
         DrawLaser(start, finalEnd);
 
