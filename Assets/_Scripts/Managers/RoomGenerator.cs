@@ -20,10 +20,13 @@ public class RoomGenerator : MonoBehaviour
     // NEXT ISSUE TO TACKLE: how do I put the sprite of the door in the right place based on direction? Like what if no door :( 
     public static RoomGenerator Instance { get; private set; }
 
+
     public List<string> scenes;
 
     // Room -> (Direction -> Connected Room)
     private static Dictionary<string, Dictionary<Direction, string>> graph = new Dictionary<string, Dictionary<Direction, string>>();
+    public static Direction lastExitDirection;
+
 
     private static bool graphGenerated = false;
 
@@ -211,6 +214,8 @@ public class RoomGenerator : MonoBehaviour
             Debug.Log("No door in that direction.");
             return;
         }
+
+        lastExitDirection = Opposite(dir);
 
         SceneManager.LoadScene(graph[current][dir]);
     }
