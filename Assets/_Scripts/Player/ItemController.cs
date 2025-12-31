@@ -150,18 +150,28 @@ public class ItemController : MonoBehaviour
                 Grab(hit.collider.gameObject);
             }
         }
-        else // AllDirections
+        else // AllDirections with priority
         {
-            // Cast in all four cardinal directions and pick the closest hit
             Vector2[] dirs = { Vector2.right, Vector2.left, Vector2.up, Vector2.down };
+
             RaycastHit2D bestHit = default;
+            int bestPriority = -1;
             float bestDist = float.MaxValue;
 
             foreach (var dir in dirs)
             {
-                var hit = Physics2D.Raycast(rayPoint.position, dir, rayDistance, grabMask);
-                if (hit.collider != null && hit.distance < bestDist)
+                RaycastHit2D hit = Physics2D.Raycast(rayPoint.position, dir, rayDistance, grabMask);
+                if (hit.collider == null) continue;
+
+                int priority = GetPriority(hit.collider.gameObject);
+
+                bool isBetter =
+                    priority > bestPriority ||
+                    (priority == bestPriority && hit.distance < bestDist);
+
+                if (isBetter)
                 {
+                    bestPriority = priority;
                     bestDist = hit.distance;
                     bestHit = hit;
                 }
@@ -169,12 +179,12 @@ public class ItemController : MonoBehaviour
 
             if (bestHit.collider != null)
             {
-                // Update facing to the direction we actually grabbed
                 facingDir = (bestHit.point - (Vector2)rayPoint.position).normalized;
                 facingDir = SnapToCardinal(facingDir);
                 Grab(bestHit.collider.gameObject);
             }
         }
+
     }
 
     private Vector2 SnapToCardinal(Vector2 v)
@@ -267,4 +277,13 @@ public class ItemController : MonoBehaviour
         rb.excludeLayers = LayerMask.GetMask("Player");
 
     }
+
+
+    private int GetPriority(GameObject obj)
+    {
+        if (obj.CompareTag("Bomb")) return 2;
+        if (obj.CompareTag("Gift")) return 1;
+        return 0;
+    }
+
 }

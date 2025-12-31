@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Boss
   - Gift
+  - Bomb
   layers:
   - Default
   - TransparentFX

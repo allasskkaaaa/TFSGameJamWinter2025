@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 4315253283349936879}
   m_Layer: 6
   m_Name: F_LargeGift_Box
-  m_TagString: Untagged
+  m_TagString: Gift
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -303,6 +303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
+  scorePopupPrefab: {fileID: 8409258324263269278, guid: 6ec4468c2814f62489076f69916706f4, type: 3}
   velocityThreshold: 1
   damageTaken: 10
   scoreOnBreak: 10
