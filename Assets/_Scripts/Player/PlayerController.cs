@@ -37,6 +37,38 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+
+        Door[] doors = FindObjectsByType<Door>(FindObjectsSortMode.None);
+
+        foreach (Door door in doors)
+        {
+            if (door.doorDirection == RoomGenerator.lastExitDirection)
+            {
+                UnityEngine.Vector3 offset = UnityEngine.Vector3.zero;
+
+                switch (door.doorDirection)
+                {
+                    case RoomGenerator.Direction.North:
+                        offset = new UnityEngine.Vector3(0, -3f, 0);
+                        break;
+
+                    case RoomGenerator.Direction.South:
+                        offset = new UnityEngine.Vector3(0, 3f, 0);
+                        break;
+
+                    case RoomGenerator.Direction.East:
+                        offset = new UnityEngine.Vector3(-3f, 0, 0);
+                        break;
+
+                    case RoomGenerator.Direction.West:
+                        offset = new UnityEngine.Vector3(3f, 0, 0);
+                        break;
+                }
+
+                transform.position = door.transform.position + offset;
+                break;
+            }
+        }
     }
 
     // Update is called once per frame (constantly running)
