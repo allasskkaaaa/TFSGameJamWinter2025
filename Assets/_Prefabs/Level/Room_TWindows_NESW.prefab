@@ -2569,7 +2569,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 4
   m_Sprite: {fileID: 1405065545, guid: a2bf94d6418e31b4a83c4febda7f047e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2656,7 +2656,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 4
   m_Sprite: {fileID: 1405065545, guid: a2bf94d6418e31b4a83c4febda7f047e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3605,6 +3605,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2190509381388254312, guid: f659f8f4dcaca404cb607fac42b0d29b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2678686619311158953, guid: f659f8f4dcaca404cb607fac42b0d29b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713152753895532768, guid: f659f8f4dcaca404cb607fac42b0d29b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7486355836039061261, guid: f659f8f4dcaca404cb607fac42b0d29b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7678292255018183308, guid: f659f8f4dcaca404cb607fac42b0d29b, type: 3}
       propertyPath: m_Name
       value: F_LargeGift_Box (3)
@@ -3667,9 +3683,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3934329774812615292, guid: 2651746f33aa9ac42a27f364511d9256, type: 3}
+      propertyPath: m_SortingOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4186430790793506801, guid: 2651746f33aa9ac42a27f364511d9256, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4700442903548604597, guid: 2651746f33aa9ac42a27f364511d9256, type: 3}
       propertyPath: m_Name
       value: F_SmallGift_Box (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5799976135988695563, guid: 2651746f33aa9ac42a27f364511d9256, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5999103445799551004, guid: 2651746f33aa9ac42a27f364511d9256, type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
