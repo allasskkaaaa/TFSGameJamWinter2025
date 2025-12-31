@@ -450,8 +450,13 @@ GameObject:
   - component: {fileID: 2462997799434660193}
   - component: {fileID: 7273857745624441574}
   - component: {fileID: 4036072277251357930}
+<<<<<<< HEAD
   - component: {fileID: 3119006775136938476}
   - component: {fileID: 3288985887832194543}
+=======
+  - component: {fileID: -7776565234511314008}
+  - component: {fileID: -5773566360731946306}
+>>>>>>> GettingGiftsBack
   m_Layer: 6
   m_Name: Elf_1_NPC
   m_TagString: Elf
@@ -648,7 +653,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueOBJ: {fileID: 7807811015535554388}
   appearanceTimer: 5
+<<<<<<< HEAD
 --- !u!212 &3119006775136938476
+=======
+--- !u!212 &-7776565234511314008
+>>>>>>> GettingGiftsBack
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -703,7 +712,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< HEAD
 --- !u!114 &3288985887832194543
+=======
+--- !u!114 &-5773566360731946306
+>>>>>>> GettingGiftsBack
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -715,10 +728,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0650319f09a92354cb447a6a1fee3514, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   maxHealth: 10
   scorePopupPrefab: {fileID: 8409258324263269278, guid: 6ec4468c2814f62489076f69916706f4, type: 3}
   velocityThreshold: 1
   damageTaken: 10
+=======
+  maxHealth: 5
+  scorePopupPrefab: {fileID: 0}
+  velocityThreshold: 1
+  damageTaken: 0
+>>>>>>> GettingGiftsBack
   scoreOnBreak: 10
   powerUpDropChance: 0.25
   powerUpPrefabs: []
