@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 164734413062134534}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6387029131713778242}
   - component: {fileID: 1623115333885851779}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9047900288698719031}
   - component: {fileID: 481442250603111424}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Robot_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 596404398255319512}
   - component: {fileID: 5073457344464902494}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Robot_Light_LowerBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -307,7 +307,8 @@ GameObject:
   - component: {fileID: 8931137207419252235}
   - component: {fileID: 3036544007715043786}
   - component: {fileID: 4114596407052801407}
-  m_Layer: 3
+  - component: {fileID: 3280478737338948625}
+  m_Layer: 6
   m_Name: Robot_Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -541,6 +542,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 0.35326838}
   m_EdgeRadius: 0
+--- !u!114 &3280478737338948625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3153601363655034793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0650319f09a92354cb447a6a1fee3514, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+  scorePopupPrefab: {fileID: 8409258324263269278, guid: 6ec4468c2814f62489076f69916706f4, type: 3}
+  velocityThreshold: 1
+  damageTaken: 10
+  scoreOnBreak: 10
+  powerUpDropChance: 0.25
+  powerUpPrefabs: []
 --- !u!1 &3548847236076459483
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,7 +571,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3911655364739364330}
   - component: {fileID: 7076677086054691264}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Robot_Light_UpperBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -638,7 +658,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5348939947219313759}
   - component: {fileID: 7251652802573739064}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -777,7 +797,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2335460063076886692}
   - component: {fileID: 4676036432336641374}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Robot_Light_Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}

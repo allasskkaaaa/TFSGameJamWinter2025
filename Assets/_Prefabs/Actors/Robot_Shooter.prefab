@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6868146033589137021}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3522078429502007831}
   - component: {fileID: 1376054233053484740}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Robot_Wrapper_Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3648081688247688950}
   - component: {fileID: 1537970599662766354}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Robot_Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5684352557834247199}
   - component: {fileID: 8183385277512367075}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,7 +302,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4566680350135731254}
   - component: {fileID: 775867202577462166}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Robot_Wrapper_UpperBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -395,7 +395,8 @@ GameObject:
   - component: {fileID: 8770086667375138432}
   - component: {fileID: 3770022112505485204}
   - component: {fileID: 6808311121853537149}
-  m_Layer: 3
+  - component: {fileID: -8457131423902610986}
+  m_Layer: 6
   m_Name: Robot_Shooter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -675,6 +676,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 0.50002027}
   m_EdgeRadius: 0
+--- !u!114 &-8457131423902610986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3714529501983263604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0650319f09a92354cb447a6a1fee3514, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+  scorePopupPrefab: {fileID: 8409258324263269278, guid: 6ec4468c2814f62489076f69916706f4, type: 3}
+  velocityThreshold: 1
+  damageTaken: 10
+  scoreOnBreak: 10
+  powerUpDropChance: 0.25
+  powerUpPrefabs: []
 --- !u!1 &4557302902843839429
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,7 +705,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7648748747026886154}
   - component: {fileID: 2549338109732678930}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -824,7 +844,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6323408130125749115}
   - component: {fileID: 3573036150819362584}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Robot_Wrapper_LowerBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
