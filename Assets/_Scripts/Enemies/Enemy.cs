@@ -47,6 +47,11 @@ public class Enemy : Health
     private NavMeshAgent agent;
     private Transform player;
     private float lastAttackTime;
+    private Animator animator;
+    private bool meleeRattling;
+    private bool projectileRattling;
+    private bool shooterRattling;
+
 
 
     public EnemyStates CurrentState
@@ -94,10 +99,22 @@ public class Enemy : Health
 
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        animator = GetComponent<Animator>();
+
         agent.updateUpAxis = false;
         agent.updateRotation = false;
         if (laser != null)
+        {
             laser.enabled = false;
+
+            var lrRenderer = laser.GetComponent<Renderer>();
+            if (lrRenderer != null)
+            {
+                lrRenderer.sortingLayerName = "Foreground"; 
+                lrRenderer.sortingOrder = 100;
+            }
+        }
+
 
         CurrentState = EnemyStates.Idle;
     }
@@ -179,49 +196,116 @@ public class Enemy : Health
 
             if (Time.time >= lastAttackTime + attackCooldown)
             {
+                PlayMeleeRattle();
                 MeleeExplode();
+            }
+            else
+            {
+                PlayMeleeIdle();
             }
         }
         else if (distance <= detectionRange)
         {
+            PlayMeleeIdle();
             CurrentState = EnemyStates.Chase;
         }
         else
         {
+            PlayMeleeIdle();
             CurrentState = EnemyStates.Idle;
         }
     }
 
 
+    // Sorry I got lazy lol
+    private void PlayMeleeIdle()
+    {
+        if (animator == null) return;
+        animator.Play("Robot_Melee_Idle");
+        meleeRattling = false;
+    }
+
+    private void PlayMeleeRattle()
+    {
+        if (animator == null || meleeRattling) return;
+        animator.Play("Robot_Melee_Rattle");
+        meleeRattling = true;
+    }
+
+    private void PlayProjectileIdle()
+    {
+        if (animator == null) return;
+        animator.Play("Robot_Projectile_Idle");
+        projectileRattling = false;
+    }
+
+    private void PlayProjectileRattle()
+    {
+        if (animator == null || projectileRattling) return;
+        animator.Play("Robot_Projectile_Rattle");
+        projectileRattling = true;
+    }
+
+    private void PlayShooterIdle()
+    {
+        if (animator == null) return;
+        animator.Play("Robot_Shooter_Idle");
+        shooterRattling = false;
+    }
+
+    private void PlayShooterRattle()
+    {
+        if (animator == null || shooterRattling) return;
+        animator.Play("Robot_Shooter_Rattle");
+        shooterRattling = true;
+    }
+
     private void HandleShooter(float distance)
     {
+        if (currentState == EnemyStates.Dead) return;
+
         if (distance <= shootRange)
         {
             CurrentState = EnemyStates.Attack;
+
+            PlayShooterRattle();
             ShootRay();
         }
         else
         {
             if (laser != null) laser.enabled = false;
             laserActive = false;
+
+            PlayShooterIdle();
             CurrentState = EnemyStates.Chase;
         }
     }
-
-
 
     private void HandleProjectile(float distance)
     {
+        if (currentState == EnemyStates.Dead) return;
+
         if (distance <= shootRange)
         {
             CurrentState = EnemyStates.Attack;
-            ShootProjectile();
+
+            if (Time.time >= lastAttackTime + attackCooldown)
+            {
+                PlayProjectileRattle();
+                ShootProjectile();
+            }
+            else
+            {
+                PlayProjectileIdle();
+            }
         }
         else
         {
+            PlayProjectileIdle();
             CurrentState = EnemyStates.Chase;
         }
     }
+
     // THEIR ATTACK METHODS
 
     private void MeleeExplode()
@@ -346,13 +430,17 @@ public class Enemy : Health
     {
         if (laser == null) return;
 
-        laser.enabled = true;         
-        laser.positionCount = 2;       
+        start.z = -5f;
+        end.z = -5f;
+
+        laser.enabled = true;
+        laser.positionCount = 2;
         laser.useWorldSpace = true;
 
-        laser.SetPosition(0, new Vector3(start.x, start.y, 0f));
-        laser.SetPosition(1, new Vector3(end.x, end.y, 0f));
+        laser.SetPosition(0, start);
+        laser.SetPosition(1, end);
     }
+
 
 
     private void ShootProjectile()
