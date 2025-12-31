@@ -3482,10 +3482,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Elf_1_NPC
       objectReference: {fileID: 0}
-    - target: {fileID: 4036072277251357930, guid: fcf03ac0b7dcefb49a908dc190271bfe, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8788209010516653489, guid: fcf03ac0b7dcefb49a908dc190271bfe, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.6941378
@@ -3550,11 +3546,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2090922875739165822, guid: babf2db932b7bda4c922df8fbc71d460, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.69
+      value: -0.7
       objectReference: {fileID: 0}
     - target: {fileID: 2090922875739165822, guid: babf2db932b7bda4c922df8fbc71d460, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.33
+      value: 1.41
       objectReference: {fileID: 0}
     - target: {fileID: 2090922875739165822, guid: babf2db932b7bda4c922df8fbc71d460, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3629,10 +3625,6 @@ PrefabInstance:
     - target: {fileID: 3746658719925544125, guid: fcf03ac0b7dcefb49a908dc190271bfe, type: 3}
       propertyPath: m_FlipX
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4036072277251357930, guid: fcf03ac0b7dcefb49a908dc190271bfe, type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5098514929433569506, guid: fcf03ac0b7dcefb49a908dc190271bfe, type: 3}
       propertyPath: m_FlipX

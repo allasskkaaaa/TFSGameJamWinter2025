@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 486446359654113287}
   - component: {fileID: 5799976135988695563}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: F_LargeGift_Box Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,9 +101,9 @@ GameObject:
   - component: {fileID: 2779506678742583069}
   - component: {fileID: 7236920032910434956}
   - component: {fileID: 7313331937718087931}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: F_SmallGift_Box
-  m_TagString: Gift
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -216,13 +216,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
-  scorePopupPrefab: {fileID: 8409258324263269278, guid: 6ec4468c2814f62489076f69916706f4, type: 3}
-  velocityThreshold: 1
+  scorePopupPrefab: {fileID: 0}
+  velocityThreshold: 5
   damageTaken: 10
-  scoreOnBreak: 5
+  scoreOnBreak: 10
   powerUpDropChance: 0.25
-  powerUpPrefabs:
-  - {fileID: 1773372138420914977, guid: d289c3c129c6ffe489f299d9902e4435, type: 3}
+  powerUpPrefabs: []
 --- !u!61 &7236920032910434956
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -257,7 +256,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0013523102, y: -0.17444885}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -267,7 +266,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.9, y: 1.05}
+  m_Size: {x: 0.50782776, y: 0.2575426}
   m_EdgeRadius: 0
 --- !u!50 &7313331937718087931
 Rigidbody2D:
@@ -306,7 +305,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5145838292132914135}
   - component: {fileID: 3934329774812615292}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: F_LargeGift_Ribbon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -393,7 +392,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7633586188632767554}
   - component: {fileID: 5999103445799551004}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: F_BigGift_Lid
   m_TagString: Untagged
   m_Icon: {fileID: 0}

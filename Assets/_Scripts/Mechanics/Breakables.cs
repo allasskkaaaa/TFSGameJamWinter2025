@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class Breakables : Health
@@ -48,11 +47,6 @@ public class Breakables : Health
             animator.Play("Gift_Destroy");
         }
 
-        if (CompareTag("Elf") && animator != null)
-        {
-            animator.Play("Elf_Death");
-        }
-
         TrySpawnPowerUp();
         SpawnScorePopup();
 
@@ -63,24 +57,6 @@ public class Breakables : Health
 
         Destroy(gameObject, 1f);
     }
-
-    public void ArmDestroyAfterThrow(float delay = 1f)
-    {
-        StartCoroutine(DestroyAfterThrowRoutine(delay));
-    }
-
-    IEnumerator DestroyAfterThrowRoutine(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-
-        if (hasDied) yield break;
-
-        if (CompareTag("Gift") || CompareTag("Elf"))
-        {
-            Death();
-        }
-    }
-
 
     private void SpawnScorePopup()
     {

@@ -159,15 +159,13 @@ MonoBehaviour:
   detectionRange: 20
   attackRange: 2.5
   shootRange: 10
-  attackCooldown: 5
-  firePoint: {fileID: 6640796856611175160}
-  knockbackForce: 5
-  knockbackRadius: 2.5
   meleeDamage: 20
-  ProjectileDamage: 20
-  projectilePrefab: {fileID: 0}
-  laser: {fileID: 7459843160235427078}
   rayDamage: 5
+  ProjectileDamage: 20
+  attackCooldown: 5
+  projectilePrefab: {fileID: 0}
+  firePoint: {fileID: 6640796856611175160}
+  laser: {fileID: 7459843160235427078}
   laserFollowSpeed: 2
   laserActiveTime: 5
   noiseIdk: []
@@ -193,7 +191,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 72
+    m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0

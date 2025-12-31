@@ -238,17 +238,13 @@ public class ItemController : MonoBehaviour
             rb.linearVelocity = throwDirection * throwImpulse; // simpler than AddForce
 
             StartCoroutine(SlowStop(rb, 0.5f));
-            Breakables breakable = grabbedItem.GetComponent<Breakables>();
-            if (breakable != null)
-            {
-                breakable.ArmDestroyAfterThrow(1f);
-            }
+
+
         }
 
         grabbedItem.transform.SetParent(null);
         grabbedItem = null;
     }
-
 
     IEnumerator SlowStop(Rigidbody2D r, float duration)
     {

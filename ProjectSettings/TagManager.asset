@@ -7,7 +7,6 @@ TagManager:
   - Boss
   - Gift
   - Bomb
-  - Elf
   layers:
   - Default
   - TransparentFX
