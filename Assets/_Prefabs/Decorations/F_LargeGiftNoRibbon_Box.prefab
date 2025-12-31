@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 7982344850590415714}
   - component: {fileID: 7180100319135822491}
   - component: {fileID: 1459020381837301120}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: F_LargeGiftNoRibbon_Box
-  m_TagString: Untagged
+  m_TagString: Gift
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,12 +128,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
-  scorePopupPrefab: {fileID: 0}
-  velocityThreshold: 5
+  scorePopupPrefab: {fileID: 8409258324263269278, guid: 6ec4468c2814f62489076f69916706f4, type: 3}
+  velocityThreshold: 1
   damageTaken: 10
   scoreOnBreak: 10
   powerUpDropChance: 0.25
-  powerUpPrefabs: []
+  powerUpPrefabs:
+  - {fileID: 8917336449097542727, guid: d20ea12270331bd46b87140cd276b0ca, type: 3}
+  - {fileID: 1773372138420914977, guid: d289c3c129c6ffe489f299d9902e4435, type: 3}
+  - {fileID: 7972872400620913516, guid: 6604e0d7d748679489fdb332bfc3d9f0, type: 3}
 --- !u!61 &7180100319135822491
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -168,7 +171,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.28734404}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -178,7 +181,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.9, y: 0.47531188}
+  m_Size: {x: 0.9, y: 1.05}
   m_EdgeRadius: 0
 --- !u!50 &1459020381837301120
 Rigidbody2D:
@@ -217,7 +220,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3376538891868564450}
   - component: {fileID: 481782754556454576}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: F_LargeGift_Box Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -304,7 +307,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8047322574806419166}
   - component: {fileID: 7510403613013795424}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: F_BigGift_Lid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
