@@ -323,17 +323,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1540238229370607222, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -458
+      objectReference: {fileID: 0}
+    - target: {fileID: 1540238229370607222, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -24
+      objectReference: {fileID: 0}
     - target: {fileID: 4760504264135907496, guid: bad8d246553f1584689681f1233f7d01, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5195072916634206253, guid: bad8d246553f1584689681f1233f7d01, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 170
+      value: -234
       objectReference: {fileID: 0}
     - target: {fileID: 5195072916634206253, guid: bad8d246553f1584689681f1233f7d01, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -42
+      value: -222
       objectReference: {fileID: 0}
     - target: {fileID: 5646203683328799474, guid: bad8d246553f1584689681f1233f7d01, type: 3}
       propertyPath: m_Pivot.x
