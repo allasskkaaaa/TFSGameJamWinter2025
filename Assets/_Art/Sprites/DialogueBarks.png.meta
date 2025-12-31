@@ -690,11 +690,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3
-        y: 127
+        y: 157
         width: 137
         height: 18
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -712,11 +712,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3
-        y: 116
+        y: 146
         width: 40
         height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -734,11 +734,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3
-        y: 106
+        y: 136
         width: 43
         height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -756,11 +756,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3
-        y: 96
+        y: 126
         width: 125
         height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -777,12 +777,12 @@ TextureImporter:
       name: Dialogue_ElvesSantasOffice
       rect:
         serializedVersion: 2
-        x: 2
-        y: 9
+        x: 1
+        y: 39
         width: 142
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -800,11 +800,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2
-        y: 37
+        y: 67
         width: 139
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -822,11 +822,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3
-        y: 64
+        y: 94
         width: 99
         height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -844,11 +844,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3
-        y: 74
+        y: 104
         width: 93
         height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -866,11 +866,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 4
-        y: 84
+        y: 114
         width: 116
         height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -879,6 +879,270 @@ TextureImporter:
       bones: []
       spriteID: b1d8e913c798d5c4982f753b69533b0e
       internalID: 1831532640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dialogue_Intro1
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 168
+        width: 34
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a3c0cd56c983534d9a91d23b2b8ae86
+      internalID: -480392132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dialogue_Intro2
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 158
+        width: 114
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9417252224b38249a6592263d83604f
+      internalID: 1335939840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dialogue_Intro3
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 139
+        width: 122
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83537ba71dd92ad4bb0eb0df8da7c8f7
+      internalID: 2025115950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dialogue_Intro4
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 128
+        width: 127
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f814471c44631a4793438de76c44364
+      internalID: 584713716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dialogue_Intro5
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 117
+        width: 112
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3252f946a8521de4cb90b9f9282a707f
+      internalID: 2005785427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dialogue_Intro6
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 96
+        width: 120
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5250d364d635be74d92b293f9c59ff62
+      internalID: 108889924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dialogue_Intro7
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 83
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bd65af767d3bf347830e8e4fb13cd47
+      internalID: -844983134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DialogueBarks_8
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 74
+        width: 40
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4eb701ed98e57434fb13e71374766c84
+      internalID: 1154176201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dialogue_Intro9
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 64
+        width: 59
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 918669d816aa56e4b85dc408c80419ba
+      internalID: 534942815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dialogue_Intro10
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 45
+        width: 117
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d513a29ef0b083429d24c28a0a95027
+      internalID: -1200130010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dialogue_Intro11
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 33
+        width: 135
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb9a3a587838db0419dc05f518f2c2a9
+      internalID: 1519283700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dialogue_Intro12
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 22
+        width: 13
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d97f09c7a17280143826ea5b924f6c2e
+      internalID: 350004765
       vertices: []
       indices: 
       edges: []
@@ -897,6 +1161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      4: 584713716
       DialogueBarks_10: 3118052484403124782
       DialogueBarks_100: -7502187156837552846
       DialogueBarks_101: -6386609087321769903
@@ -1059,6 +1324,7 @@ TextureImporter:
       DialogueBarks_77: 4095904417427724332
       DialogueBarks_78: -5894657843160289132
       DialogueBarks_79: -7032954973970193677
+      DialogueBarks_8: 1154176201
       DialogueBarks_80: -6985552596277299614
       DialogueBarks_81: 8003232140430382142
       DialogueBarks_82: 5972906884713402133
@@ -1083,6 +1349,17 @@ TextureImporter:
       Dialogue_ElvesSantasOffice: 5955817773991564279
       Dialogue_FinallyFinished: -4967251673678237191
       Dialogue_HeyDude: 6433062368817676239
+      Dialogue_Intro1: -480392132
+      Dialogue_Intro10: -1200130010
+      Dialogue_Intro11: 1519283700
+      Dialogue_Intro12: 350004765
+      Dialogue_Intro2: 1335939840
+      Dialogue_Intro3: 2025115950
+      Dialogue_Intro4: 584713716
+      Dialogue_Intro5: 2005785427
+      Dialogue_Intro6: 108889924
+      Dialogue_Intro7: -844983134
+      Dialogue_Intro9: 534942815
       Dialogue_SantaRobotsReplace: -1983901712064900759
       Dialogue_SeenBarry: 6624347095327859588
       Dialogue_SeenTommy: -8708518136023420929
