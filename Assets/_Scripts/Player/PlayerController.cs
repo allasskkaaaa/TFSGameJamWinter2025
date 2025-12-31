@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Player Parameters")]
     // speed variable for player
-    [SerializeField] private float speed = 5f;
+    [SerializeField] public float speed = 5f;
     public Rigidbody2D playerRigidbody;
 
     [Header("Animation")]
@@ -158,6 +158,20 @@ public class PlayerController : MonoBehaviour
             return new UnityEngine.Vector2(Mathf.Sign(v.x), 0f);
         else
             return new UnityEngine.Vector2(0f, Mathf.Sign(v.y));
+    }
+
+    // powerup activation method
+    public void ApplyPowerupModifier(PowerupModifier powerupModifier)
+    {
+        powerupModifier.Activate(gameObject);
+
+        //check if the powerup passed is timed class
+        var TimedPowerupModifier = powerupModifier as TimedPowerupModifier;
+        if (TimedPowerupModifier != null)
+        {
+            //start the countdown coroutine for timed powerups
+            StartCoroutine(TimedPowerupModifier.StartPowerupCountdown(gameObject));
+        }
     }
 
 }
