@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,7 +15,8 @@ public class GameManager : MonoBehaviour
         MainMenu,
         Playing,
         Paused,
-        GameOver
+        GameOver,
+        GameWin
     }
 
     [SerializeField] private GameState currentState; 
@@ -147,6 +149,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void GameOver()
+    {
+        SceneManager.LoadScene("GameLoss");
+    }
+
+    public void GameWin()
+    {
+        SceneManager.LoadScene("GameWin");
+    }
 
     /// remove previously added temporary MaxHealth bonus and clamp Health.
     /// this is for  TempMaxHealthBuff Deactivate().
@@ -170,5 +181,14 @@ public class GameManager : MonoBehaviour
         Debug.Log("New Game State has been changed from " + GetGameState() + " to " + newState);
         currentState = newState;
         OnGameStateChanged?.Invoke();
+
+        if (currentState == GameState.GameOver)
+        {
+            GameOver();
+        }
+        if (currentState == GameState.GameWin)
+        {
+            GameWin();
+        }
     }
 }

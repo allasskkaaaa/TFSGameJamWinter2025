@@ -469,8 +469,8 @@ MonoBehaviour:
   bombInterval: 2
   idleAfterHit: 3
   laserDuration: 10
-  laserDamage: 20
-  laserFollowSpeed: 2
+  laserDamage: 5
+  laserFollowSpeed: 1
   shootRange: 10
   moveDistanceBeforeBomb: 3
 --- !u!114 &1336183159 stripped
@@ -495,6 +495,14 @@ PrefabInstance:
     - target: {fileID: 66183763793992974, guid: e4deb6760f56caf4cb0bc1b4a18c1753, type: 3}
       propertyPath: m_Name
       value: GameCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 242626885470576826, guid: e4deb6760f56caf4cb0bc1b4a18c1753, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4774415079413270262, guid: e4deb6760f56caf4cb0bc1b4a18c1753, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7315181708087238391, guid: e4deb6760f56caf4cb0bc1b4a18c1753, type: 3}
       propertyPath: m_Pivot.x
@@ -574,6 +582,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7315181708087238391, guid: e4deb6760f56caf4cb0bc1b4a18c1753, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8666750263094509813, guid: e4deb6760f56caf4cb0bc1b4a18c1753, type: 3}
+      propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

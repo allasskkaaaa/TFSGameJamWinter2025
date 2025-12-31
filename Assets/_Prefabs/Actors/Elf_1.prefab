@@ -180,7 +180,7 @@ MonoBehaviour:
   grabMask:
     serializedVersion: 2
     m_Bits: 64
-  grabMode: 0
+  grabMode: 1
   showDebugRays: 1
   throwImpulse: 20
 --- !u!96 &6851741628183508033
