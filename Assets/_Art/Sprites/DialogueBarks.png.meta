@@ -1147,6 +1147,50 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Dialogue_Steps
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 8
+        width: 128
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8968f9995065f464fa35a22aff695f6c
+      internalID: -423104575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dialogue_Operation
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 8
+        width: 89
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 835d94d21b09dba4a9aa4c7107352ce4
+      internalID: 186631923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -1360,9 +1404,11 @@ TextureImporter:
       Dialogue_Intro6: 108889924
       Dialogue_Intro7: -844983134
       Dialogue_Intro9: 534942815
+      Dialogue_Operation: 186631923
       Dialogue_SantaRobotsReplace: -1983901712064900759
       Dialogue_SeenBarry: 6624347095327859588
       Dialogue_SeenTommy: -8708518136023420929
+      Dialogue_Steps: -423104575
       Dialogue_TakeDownNotes: -5583639614606291667
       Dialogue_WannaHang: -5212805856402572664
       Dialogue_YouOkay: 3030968703808745404

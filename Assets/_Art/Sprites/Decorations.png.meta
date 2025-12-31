@@ -1657,11 +1657,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 264
-        y: 204
+        y: 256
         width: 103
         height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1670,6 +1670,28 @@ TextureImporter:
       bones: []
       spriteID: 12a2383ec624bb346842697ce5e0fe43
       internalID: 1908616465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Decorations_0
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 153
+        width: 48
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d315cc47f052464db211976dadb2cda
+      internalID: 906022950
       vertices: []
       indices: 
       edges: []
@@ -1694,6 +1716,7 @@ TextureImporter:
       Candle_Light: 97731798
       Candle_Stick: -1841550332
       ConveyorBelt: 904256221
+      Decorations_0: 906022950
       Decorations_19: 443069499
       Decorations_22: 1940897871
       Decorations_25: 2113624463

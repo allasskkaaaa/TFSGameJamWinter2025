@@ -27,6 +27,7 @@ public class SpeechBubble : MonoBehaviour
     private void Start()
     {
         timer = appearanceTimer;
+        dialogueOBJ.SetActive(false);
     }
     private void Update()
     {
