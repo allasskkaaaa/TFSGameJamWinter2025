@@ -711,6 +711,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6492374128080338447, guid: e4deb6760f56caf4cb0bc1b4a18c1753, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6492374128080338447, guid: e4deb6760f56caf4cb0bc1b4a18c1753, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6492374128080338447, guid: e4deb6760f56caf4cb0bc1b4a18c1753, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6492374128080338447, guid: e4deb6760f56caf4cb0bc1b4a18c1753, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7315181708087238391, guid: e4deb6760f56caf4cb0bc1b4a18c1753, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -791,6 +807,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7324586754765728679, guid: e4deb6760f56caf4cb0bc1b4a18c1753, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7324586754765728679, guid: e4deb6760f56caf4cb0bc1b4a18c1753, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7324586754765728679, guid: e4deb6760f56caf4cb0bc1b4a18c1753, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7324586754765728679, guid: e4deb6760f56caf4cb0bc1b4a18c1753, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -814,6 +846,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 926549821207784294, guid: 85d43a1a5e398834d8d4d935fc321dca, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 955483388228987768, guid: 85d43a1a5e398834d8d4d935fc321dca, type: 3}
+      propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1289439837763142050, guid: 85d43a1a5e398834d8d4d935fc321dca, type: 3}

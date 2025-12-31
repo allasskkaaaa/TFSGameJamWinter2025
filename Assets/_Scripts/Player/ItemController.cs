@@ -76,13 +76,16 @@ public class ItemController : MonoBehaviour
     [SerializeField] private float rayDistance = 1.5f;
     [SerializeField] private LayerMask grabMask;    // sets to objects layer in inspector (me thinks)
     [SerializeField] private GrabMode grabMode = GrabMode.FacingOnly;
-    
+
     // debug yipee
-    [SerializeField] private bool showDebugRays = true; 
+    [SerializeField] private bool showDebugRays = true;
 
 
     // throwing impulse variable
     [SerializeField] private float throwImpulse = 3f; // 
+    [Header("Audio")]
+    [SerializeField] private AudioClip elfPickupSound; // ElfSound3
+
 
     private GameObject grabbedItem;
     private Vector2 facingDir = Vector2.right; // default facing right can change later
@@ -124,7 +127,7 @@ public class ItemController : MonoBehaviour
     //based on which direction player is pressing (lowkey kinda hard)
     private void UpdateFacingDirection()
     {
-        
+
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
         if (input.sqrMagnitude > 0.01f)
@@ -195,6 +198,12 @@ public class ItemController : MonoBehaviour
         grabbedItem.transform.SetParent(grabPoint);
         grabbedItem.transform.position = grabPoint.position;
 
+        //  PLAY ELF PICKUP SOUND TY CAMI
+        if (item.CompareTag("Elf") && elfPickupSound != null && AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayOneShot(elfPickupSound, false);
+        }
+
         var rb = grabbedItem.GetComponent<Rigidbody2D>();
         var col = grabbedItem.GetComponent<Collider2D>();
 
@@ -203,10 +212,10 @@ public class ItemController : MonoBehaviour
         if (rb)
         {
             rb.bodyType = RigidbodyType2D.Kinematic;
-            rb.linearVelocity = Vector2.zero;       
+            rb.linearVelocity = Vector2.zero;
             rb.angularVelocity = 0f;
-            rb.freezeRotation = true;  //item wont wobble
-            rb.gravityScale = 0f;    // item steady (can also change in gui)
+            rb.freezeRotation = true;
+            rb.gravityScale = 0f;
         }
     }
 
@@ -216,7 +225,7 @@ public class ItemController : MonoBehaviour
     {
         var rb = grabbedItem.GetComponent<Rigidbody2D>();
         var col = grabbedItem.GetComponent<Collider2D>();
-        
+
         StartCoroutine(IgnorePlayerMomentarily(rb, col));
 
         if (col) col.isTrigger = false;
@@ -238,13 +247,17 @@ public class ItemController : MonoBehaviour
             rb.linearVelocity = throwDirection * throwImpulse; // simpler than AddForce
 
             StartCoroutine(SlowStop(rb, 0.5f));
-
-
+            Breakables breakable = grabbedItem.GetComponent<Breakables>();
+            if (breakable != null)
+            {
+                breakable.ArmDestroyAfterThrow(1f); 
+            }
         }
 
         grabbedItem.transform.SetParent(null);
         grabbedItem = null;
     }
+
 
     IEnumerator SlowStop(Rigidbody2D r, float duration)
     {
@@ -263,7 +276,7 @@ public class ItemController : MonoBehaviour
     IEnumerator IgnorePlayerMomentarily(Rigidbody2D rb, Collider2D col)
     {
         col.excludeLayers = LayerMask.GetMask("Player");
-        rb.excludeLayers = LayerMask.GetMask("Player"); 
+        rb.excludeLayers = LayerMask.GetMask("Player");
 
         yield return new WaitForSeconds(0.5f);
 
