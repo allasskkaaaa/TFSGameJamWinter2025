@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SpeechBubble : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer speechSprite;
+    [SerializeField] private GameObject dialogueOBJ;
     [SerializeField] private float appearanceTimer = 5f; //How long the speech bubble will last
 
     private bool startTimer = false;
@@ -14,8 +14,13 @@ public class SpeechBubble : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            speechSprite.enabled = true;
-            startTimer = true; ;
+            //Only sets the dialogue as active if it isn't already
+            if (!startTimer)
+            {
+                dialogueOBJ.SetActive(true);
+                startTimer = true; ;
+            }
+            
         }
     }
 
@@ -35,7 +40,7 @@ public class SpeechBubble : MonoBehaviour
             else
             {
                 timer = appearanceTimer;
-                speechSprite.enabled = false;
+                dialogueOBJ.SetActive(false);
                 startTimer = false;
             }
         }
