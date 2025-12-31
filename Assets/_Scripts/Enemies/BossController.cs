@@ -2,11 +2,9 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(Enemy))]
 public class BossController : Health
 {
     [Header("References")]
-    public Enemy enemy;
     public Transform firePoint;
     public GameObject bombPrefab;
     public LineRenderer laser;
@@ -15,72 +13,100 @@ public class BossController : Health
     [Header("Boss Settings")]
     public float bombInterval = 2f;
     public float idleAfterHit = 1f;
-    public float laserDuration = 10f;
+    public float laserDuration = 5f; // laser spin duration
     public int laserDamage = 20;
-    public float laserFollowSpeed = 6f;
     public float shootRange = 10f;
-    public float moveDistanceBeforeBomb = 3f; 
+    public float moveDistanceBeforeBomb = 3f;
 
     private Transform player;
-    private bool isHit;
-    private bool laserActive;
     private NavMeshAgent agent;
+
+    private enum EnemyStates { Idle, Moving, Laser, Dead }
+    private EnemyStates currentState = EnemyStates.Idle;
+
+    private bool laserActive;
 
     public override void Start()
     {
-        if (enemy == null) enemy = GetComponent<Enemy>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
-        agent.updateUpAxis = false;
-        agent.updateRotation = false;
+        if (agent != null)
+        {
+            agent.updateUpAxis = false;
+            agent.updateRotation = false;
+        }
 
-        if (laser != null) laser.enabled = false;
+        if (laser != null)
+        {
+            laser.enabled = false;
+            var lrRenderer = laser.GetComponent<Renderer>();
+            if (lrRenderer != null)
+            {
+                lrRenderer.sortingLayerName = "Foreground";
+                lrRenderer.sortingOrder = 100;
+            }
+        }
 
-        // Start bomb loop after initial idle
+        maxHealth = 100;
+        health = 100;
+
+        currentState = EnemyStates.Moving;
         StartCoroutine(BombLoop(initialIdle: true));
     }
 
     private IEnumerator BombLoop(bool initialIdle = false)
     {
-        // Initial idle at the very start
         if (initialIdle)
         {
-            enemy.CurrentState = EnemyStates.Idle;
-            yield return new WaitForSeconds(5f); // 5 seconds idle before throwing bombs
+            currentState = EnemyStates.Idle;
+            yield return new WaitForSeconds(5f);
+            currentState = EnemyStates.Moving;
         }
 
-        while (!isHit && enemy.CurrentState != EnemyStates.Dead)
+        while (currentState != EnemyStates.Dead)
         {
-            // Move before throwing
-            Vector3 moveTarget = GetRandomNearbyPosition();
-            agent.isStopped = false;
-            agent.SetDestination(moveTarget);
-
-            // Wait until boss reaches target or 0.5s max
-            float timer = 0f;
-            while (Vector3.Distance(transform.position, moveTarget) > 0.1f && timer < 0.5f)
+            if (currentState != EnemyStates.Moving)
             {
-                timer += Time.deltaTime;
-                yield return null;
+                yield return null; // pause if not in Moving state
+                continue;
             }
-            agent.isStopped = true;
+
+            // Move boss
+            Vector3 moveTarget = GetRandomNearbyPosition();
+            if (agent != null)
+            {
+                agent.isStopped = false;
+                agent.SetDestination(moveTarget);
+
+                float timer = 0f;
+                while (Vector3.Distance(transform.position, moveTarget) > 0.1f && timer < 0.5f)
+                {
+                    timer += Time.deltaTime;
+                    yield return null;
+                }
+                agent.isStopped = true;
+            }
 
             // Throw bomb
             ThrowBombAtPlayer();
-
             yield return new WaitForSeconds(bombInterval);
         }
     }
 
-
     public void OnBossHit()
     {
-        if (!isHit)
+        if (currentState == EnemyStates.Dead || currentState == EnemyStates.Laser)
+            return;
+
+        if (health <= 0)
         {
-            isHit = true;
-            StopAllCoroutines(); // END OF BOMB SEQUENCE 
-            StartCoroutine(HitAndLaserSequence());
+            currentState = EnemyStates.Dead;
+            Debug.Log("BOSS DEFEATED!");
+            GameManager.Instance.SwitchState(GameManager.GameState.GameWin);
+            return;
         }
+
+        StartCoroutine(HitAndLaserSequence());
     }
 
     private Vector3 GetRandomNearbyPosition()
@@ -88,9 +114,7 @@ public class BossController : Health
         if (player == null) return transform.position;
 
         Vector2 randomDir = Random.insideUnitCircle.normalized;
-        Vector3 target = transform.position + new Vector3(randomDir.x, randomDir.y, 0f) * moveDistanceBeforeBomb;
-
-        return target;
+        return transform.position + new Vector3(randomDir.x, randomDir.y, 0f) * moveDistanceBeforeBomb;
     }
 
     private void ThrowBombAtPlayer()
@@ -105,32 +129,42 @@ public class BossController : Health
 
     private IEnumerator HitAndLaserSequence()
     {
-        // 1 second idle
-        enemy.CurrentState = EnemyStates.Idle;
+        currentState = EnemyStates.Laser;
+
+        // Idle before laser
         yield return new WaitForSeconds(idleAfterHit);
 
-        // Laser attack for 10 seconds
         float timer = 0f;
         laserActive = true;
 
-        while (timer < laserDuration && enemy.CurrentState != EnemyStates.Dead)
+        int numRays = 20;
+        float angleSpread = 20f;
+
+        if (laser != null)
         {
-            if (player != null && firePoint != null)
+            laser.positionCount = numRays * 2;
+            laser.enabled = true;
+            laser.useWorldSpace = true;
+        }
+
+        while (timer < laserDuration && currentState != EnemyStates.Dead)
+        {
+            Vector3 start = firePoint.position;
+            float elapsedRotation = (timer / laserDuration) * 360f;
+
+            for (int i = 0; i < numRays; i++)
             {
-                Vector3 start = firePoint.position;
-                Vector3 desiredEnd = start + (player.position - start).normalized * shootRange;
+                float angle = Mathf.Lerp(-angleSpread / 2f, angleSpread / 2f, (float)i / (numRays - 1));
+                angle += elapsedRotation;
+                Vector3 rayDir = Quaternion.Euler(0, 0, angle) * Vector3.right;
 
-                Vector3 currentEnd = laser != null && laser.positionCount == 2 ? laser.GetPosition(1) : start;
-                currentEnd = Vector3.Lerp(currentEnd, desiredEnd, Time.deltaTime * laserFollowSpeed);
+                RaycastHit2D hit = Physics2D.Raycast(start, rayDir, shootRange, playerMask);
+                Vector3 endPoint = (hit != null && hit.collider != null) ? hit.point : start + rayDir * shootRange; // If it hit anyting in the way, the raycast ends there :000 
 
-                // Laser hit detection
-                RaycastHit2D hit = Physics2D.Raycast(start, (desiredEnd - start).normalized, shootRange, playerMask);
                 if (hit.collider != null && hit.collider.CompareTag("Player"))
-                {
                     GameManager.Instance.Health -= laserDamage * Time.deltaTime;
-                }
 
-                DrawLaser(start, currentEnd);
+                DrawLaser(start, endPoint, i);
             }
 
             timer += Time.deltaTime;
@@ -139,19 +173,18 @@ public class BossController : Health
 
         if (laser != null) laser.enabled = false;
         laserActive = false;
-        isHit = false;
 
-        // Resume bomb loop
-        StartCoroutine(BombLoop());
+        currentState = EnemyStates.Moving; // back to bomb throwing
     }
 
-    private void DrawLaser(Vector3 start, Vector3 end)
+    private void DrawLaser(Vector3 start, Vector3 end, int rayIndex)
     {
         if (laser == null) return;
-        laser.enabled = true;
-        laser.positionCount = 2;
-        laser.useWorldSpace = true;
-        laser.SetPosition(0, start);
-        laser.SetPosition(1, end);
+
+        start.z = -5f;
+        end.z = -5f;
+
+        laser.SetPosition(rayIndex * 2, start);
+        laser.SetPosition(rayIndex * 2 + 1, end);
     }
 }

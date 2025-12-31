@@ -7,7 +7,7 @@ public class Bomb : MonoBehaviour
     [SerializeField] private float explodeDelay = 0.5f; 
     [SerializeField] private float knockbackForce = 5f;
     [SerializeField] private float knockbackRadius = 2.5f;
-    [SerializeField] private int damage = 20;
+    [SerializeField] private int damage;
 
     private Vector3 targetPos;
 
@@ -60,7 +60,7 @@ public class Bomb : MonoBehaviour
                 BossController boss = hit.GetComponent<BossController>();
                 if (boss != null)
                 {
-                    Debug.Log("HIT BOSS!"); 
+                    Debug.Log("HIT BOSS! Health is now " + boss.health); 
                     boss.TakeDamage(damage);
                     boss.OnBossHit();
                 }

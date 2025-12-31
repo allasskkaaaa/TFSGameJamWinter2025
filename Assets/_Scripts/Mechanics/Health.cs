@@ -38,7 +38,7 @@ public class Health : MonoBehaviour, IDamageable
 
         if (maxHealth <= 0)
         {
-            maxHealth = 5;
+            maxHealth = 100;
         }
 
         health = maxHealth;
