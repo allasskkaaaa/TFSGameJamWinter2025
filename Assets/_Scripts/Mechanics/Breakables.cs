@@ -22,7 +22,7 @@ public class Breakables : Health
     public override void Death()
     {
         // Add break animation or effects here if needed 
-        //GameManager.Instance.Score += scoreOnBreak; 
+        GameManager.Instance.Score += scoreOnBreak; 
         Debug.Log($"{gameObject.name} has been broken! Score is now {GameManager.Instance.Score}!");
         GameObject.Destroy(this.gameObject);
     }

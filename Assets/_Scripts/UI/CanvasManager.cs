@@ -105,16 +105,37 @@ public class CanvasManager : MonoBehaviour
     void UpdateScoreText(int value)
     {
         scoreText.text = value.ToString();
-    } 
+    }
+
+    private Coroutine healthRoutine;
 
     void UpdateHealthBar(float currentHealth)
     {
-        if (healthBarImage != null && GameManager.Instance != null)
-        {
-            float fill = currentHealth / 100; 
-            healthBarImage.fillAmount = Mathf.Clamp01(fill); 
-        }
+        float targetFill = Mathf.Clamp01(currentHealth / 100f);
+        if (healthRoutine != null)
+            StopCoroutine(healthRoutine);
+
+        healthRoutine = StartCoroutine(SmoothHealthBar(targetFill));
     }
+
+    private IEnumerator SmoothHealthBar(float targetFill)
+    {
+        float startFill = healthBarImage.fillAmount;
+        float elapsed = 0f;
+        float duration = 0.5f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            healthBarImage.fillAmount = Mathf.Lerp(startFill, targetFill, elapsed / duration);
+            yield return null;
+        }
+
+        healthBarImage.fillAmount = targetFill; 
+    }
+
+
+
 
     void Update()
     {
