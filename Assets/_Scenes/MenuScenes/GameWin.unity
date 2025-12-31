@@ -204,6 +204,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1540238229370607222, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1540238229370607222, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1540238229370607222, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1540238229370607222, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -268
+      objectReference: {fileID: 0}
+    - target: {fileID: 1540238229370607222, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 108
+      objectReference: {fileID: 0}
+    - target: {fileID: 1540238229370607222, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195072916634206253, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -290
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195072916634206253, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -170
+      objectReference: {fileID: 0}
     - target: {fileID: 5646203683328799474, guid: bad8d246553f1584689681f1233f7d01, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -284,9 +316,51 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6248993001525093385, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -4340340098122707235, guid: aeb9a7d77474ff64598973e0679eee21, type: 3}
+    - target: {fileID: 6248993001525093385, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6248993001525093385, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6248993001525093385, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7901126364600285280, guid: bad8d246553f1584689681f1233f7d01, type: 3}
       propertyPath: m_text
-      value: 'Score '
+      value: After your rampage, you ineviitably had to leave the workshop. However,
+        all the robots were beyond repair and the rest of the elves got to keep their
+        job!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901126364600285280, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_fontSize
+      value: 26.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901126364600285280, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_margin.z
+      value: -107.525085
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901126364600285280, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: d5869d812440d044895d766c4b3b5706, type: 2}
+    - target: {fileID: 7901126364600285280, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 26.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901126364600285280, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1499188301728458949, guid: d5869d812440d044895d766c4b3b5706, type: 2}
+    - target: {fileID: 7901126364600285280, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
