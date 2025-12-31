@@ -130,7 +130,7 @@ public class CanvasManager : MonoBehaviour
             {
                 Time.timeScale = 0f;
                 GameManager.Instance.SwitchState(GameManager.GameState.Paused);
-                asm.PlayOneShot(pauseSound, false);
+                //asm.PlayOneShot(pauseSound, false);
                 pauseMenu.SetActive(true);
             }
 
@@ -208,7 +208,7 @@ public class CanvasManager : MonoBehaviour
 
     void PlayButtonSound()
     {
-        asm.PlayOneShot(buttonSound, false);
+        //asm.PlayOneShot(buttonSound, false);
     }
 
     void OnDestroy()
