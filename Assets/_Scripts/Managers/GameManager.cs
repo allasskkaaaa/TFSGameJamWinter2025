@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
             if (OnHealthValueChanged != null)
             {
                 OnHealthValueChanged.Invoke(health);
-                Debug.Log("Player Health changed to: " + health);
+                //Debug.Log("Player Health changed to: " + health);
             }
 
             if (health <= 0 && currentState != GameState.GameOver)

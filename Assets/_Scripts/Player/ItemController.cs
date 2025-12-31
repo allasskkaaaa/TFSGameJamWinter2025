@@ -221,18 +221,40 @@ public class ItemController : MonoBehaviour
         {
             rb.freezeRotation = false;
             rb.bodyType = RigidbodyType2D.Dynamic;
-            rb.gravityScale = 1f; // might reset later
+            //rb.gravityScale = 1f; // might reset later
 
-            // adds impulse in facing direction
-            if (throwImpulse > 10f)
-            {
-                rb.AddForce(facingDir.normalized * throwImpulse, ForceMode2D.Impulse);
-            }
+            Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mouseWorldPos.z = 0f;
+
+            Vector2 throwDirection = ((Vector2)mouseWorldPos - (Vector2)grabPoint.position).normalized;
+
+            // applying impulse tot hrow in the direction of where mouse is 
+            // NOTE TO PUT A LITTLE CROSSHAIR THING FOR THIS
+            Vector2 arc = new Vector2(0, 1f); // parabola effect ig
+            rb.linearVelocity = throwDirection * throwImpulse; // simpler than AddForce
+
+            StartCoroutine(SlowStop(rb, 0.5f));
+
+
         }
 
         grabbedItem.transform.SetParent(null);
         grabbedItem = null;
     }
+
+    IEnumerator SlowStop(Rigidbody2D r, float duration)
+    {
+        Vector2 initialVel = r.linearVelocity;
+        float t = 0;
+        while (t < duration)
+        {
+            t += Time.deltaTime;
+            r.linearVelocity = Vector2.Lerp(initialVel, Vector2.zero, t / duration);
+            yield return null;
+        }
+        r.linearVelocity = Vector2.zero;
+    }
+
 
     IEnumerator IgnorePlayerMomentarily(Rigidbody2D rb, Collider2D col)
     {
