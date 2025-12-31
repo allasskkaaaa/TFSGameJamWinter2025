@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 5
   m_Sprite: {fileID: -1216141554, guid: a2bf94d6418e31b4a83c4febda7f047e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.113741554, g: 0.21606618, b: 0.8490566, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -162,7 +162,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1742706255, guid: a2bf94d6418e31b4a83c4febda7f047e, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 0.5686275}
   m_FlipX: 0
@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 4315253283349936879}
   m_Layer: 6
   m_Name: F_LargeGift_Box
-  m_TagString: Untagged
+  m_TagString: Gift
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -206,7 +206,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.728, y: 3.239, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3349983385984533846}
   - {fileID: 1309488123282208207}
@@ -258,7 +258,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 3
   m_Sprite: {fileID: 1742706255, guid: a2bf94d6418e31b4a83c4febda7f047e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.22460535, g: 0.7584905, b: 0.19320033, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -278,7 +278,7 @@ Animator:
   m_GameObject: {fileID: 7678292255018183308}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3c211c2a494751c428ba08a3d7e012f9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -303,9 +303,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
-  velocityThreshold: 3
+  scorePopupPrefab: {fileID: 8409258324263269278, guid: 6ec4468c2814f62489076f69916706f4, type: 3}
+  velocityThreshold: 1
   damageTaken: 10
   scoreOnBreak: 10
+  powerUpDropChance: 0.25
+  powerUpPrefabs:
+  - {fileID: 8917336449097542727, guid: d20ea12270331bd46b87140cd276b0ca, type: 3}
+  - {fileID: 1773372138420914977, guid: d289c3c129c6ffe489f299d9902e4435, type: 3}
+  - {fileID: 7972872400620913516, guid: 6604e0d7d748679489fdb332bfc3d9f0, type: 3}
 --- !u!61 &6730110661423630351
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -456,7 +462,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 4
   m_Sprite: {fileID: 2114247248, guid: a2bf94d6418e31b4a83c4febda7f047e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.22460535, g: 0.7584905, b: 0.19320033, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

@@ -19,22 +19,27 @@ public class Enemy : Health
     [SerializeField] private float shootRange = 10f;
 
     [Header("Combat")]
-    [SerializeField] private int meleeDamage = 20;
-    [SerializeField] private int rayDamage = 20;
-    [SerializeField] private int ProjectileDamage = 20;
     [SerializeField] private float attackCooldown = 1.5f;
-    [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform firePoint;
 
+    [Header("Melee Specific")]
+    [SerializeField] private float knockbackForce = 5f; 
+    [SerializeField] private float knockbackRadius = 2.5f;
+    [SerializeField] private int meleeDamage = 20;
 
+    [Header("Projectile Specific")]
+    [SerializeField] private int ProjectileDamage = 20;
+    [SerializeField] private GameObject projectilePrefab;
+
+    [Header("Shooter Laser")]
+    [SerializeField] private LineRenderer laser;
+    [SerializeField] private int rayDamage = 20;
+    [SerializeField] private float laserFollowSpeed = 6f;
+    [SerializeField] private float laserActiveTime = 0.6f;
     private bool laserActive;
     private float laserEndTime;
     private Vector3 laserEnd;
 
-    [Header("Shooter Laser")]
-    [SerializeField] private LineRenderer laser;
-    [SerializeField] private float laserFollowSpeed = 6f;
-    [SerializeField] private float laserActiveTime = 0.6f;
 
     [Header("Audio")]
     public AudioClip[] noiseIdk;
@@ -67,7 +72,11 @@ public class Enemy : Health
                     Chase();
                     break;
                 case EnemyStates.Attack:
+                    agent.isStopped = true;
+                    agent.velocity = Vector3.zero; 
                     Attack();
+                    break;
+
                     break;
                 case EnemyStates.Staggered:
                     Staggered();
@@ -113,6 +122,12 @@ public class Enemy : Health
                 HandleProjectile(distance);
                 break;
         }
+
+        if (currentState == EnemyStates.Chase)
+        {
+            agent.isStopped = false;
+            agent.SetDestination(player.position);
+        }
     }
 
     
@@ -137,7 +152,13 @@ public class Enemy : Health
     private void Attack()
     {
         agent.isStopped = true;
-        laserEnd = Vector3.zero;
+
+        if (enemyType == EnemyTypes.Melee)
+        {
+            agent.isStopped = true;
+            agent.velocity = Vector3.zero;
+            MeleeExplode(); 
+        }
     }
 
 
@@ -150,10 +171,16 @@ public class Enemy : Health
 
     private void HandleMelee(float distance)
     {
+        if (currentState == EnemyStates.Dead) return;
+
         if (distance <= attackRange)
         {
             CurrentState = EnemyStates.Attack;
-            MeleeExplode();
+
+            if (Time.time >= lastAttackTime + attackCooldown)
+            {
+                MeleeExplode();
+            }
         }
         else if (distance <= detectionRange)
         {
@@ -164,6 +191,7 @@ public class Enemy : Health
             CurrentState = EnemyStates.Idle;
         }
     }
+
 
     private void HandleShooter(float distance)
     {
@@ -191,7 +219,7 @@ public class Enemy : Health
         }
         else
         {
-            CurrentState = EnemyStates.Idle;
+            CurrentState = EnemyStates.Chase;
         }
     }
     // THEIR ATTACK METHODS
@@ -202,11 +230,59 @@ public class Enemy : Health
 
         lastAttackTime = Time.time;
 
-        GameManager.Instance.Health -= meleeDamage;
+        // making the self destruct effect
+        Vector2 explosionPos = transform.position;
 
+        // checking if player is within knockback radius
+        Collider2D[] hits = Physics2D.OverlapCircleAll(explosionPos, knockbackRadius, playerMask);
 
-        Death(); // Self-destruct
+        foreach (Collider2D hit in hits)
+        {
+            if (hit.CompareTag("Player"))
+            {
+                Debug.Log("Hit Player with Melee Enemy Explosion");
+                // do damage to player
+                GameManager.Instance.Health -= meleeDamage;
+
+                // applying knockback effect
+                Rigidbody2D playerRb = hit.GetComponent<Rigidbody2D>();
+                if (playerRb != null)
+                {
+                    Vector2 knockDir = (hit.transform.position - transform.position).normalized;
+                    float knockDuration = 0.2f;
+
+                    StartCoroutine(KnockbackPlayer(hit.GetComponent<Transform>(), knockDir, knockDuration));
+
+                }
+            }
+        }
+        // </3 SFX 
+
+        Death();
     }
+
+    private IEnumerator KnockbackPlayer(Transform target, Vector2 direction, float duration)
+    {
+        float timer = 0f;
+        while (timer < duration)
+        {
+            target.position += (Vector3)(direction * knockbackForce * Time.deltaTime);
+            timer += Time.deltaTime;
+            yield return null;
+        }
+    }
+
+
+    private void OnDrawGizmosSelected()
+    {
+        if (enemyType == EnemyTypes.Melee)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, knockbackRadius);
+        }
+    }
+
+
 
     private void ShootRay()
     {
@@ -282,13 +358,20 @@ public class Enemy : Health
     private void ShootProjectile()
     {
         if (Time.time < lastAttackTime + attackCooldown) return;
-
         lastAttackTime = Time.time;
 
-        if (projectilePrefab == null || firePoint == null) return;
+        if (projectilePrefab == null || firePoint == null || player == null) return;
 
-        Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+        Vector3 targetPos = player.position;
+        GameObject bomb = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
+        Bomb bombScript = bomb.GetComponent<Bomb>();
+        if (bombScript != null)
+        {
+            bombScript.LaunchTowards(targetPos);
+        }
     }
+
+
 
     // DYING FUNCTION 
 
@@ -299,6 +382,7 @@ public class Enemy : Health
         CurrentState = EnemyStates.Dead;
         agent.isStopped = true;
 
-        base.Death();
+        Destroy(gameObject, 0.5f);
+        //base.Death();
     }
 }

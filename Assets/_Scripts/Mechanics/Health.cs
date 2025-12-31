@@ -28,7 +28,7 @@ public class Health : MonoBehaviour, IDamageable
 
     public virtual void Death()
     {
-        anim.SetTrigger("Death");
+        //anim.SetTrigger("Death");
     }
 
     public virtual void Start()
@@ -38,7 +38,7 @@ public class Health : MonoBehaviour, IDamageable
 
         if (maxHealth <= 0)
         {
-            maxHealth = 5;
+            maxHealth = 100;
         }
 
         health = maxHealth;

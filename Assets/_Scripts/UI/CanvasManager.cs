@@ -43,8 +43,6 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] Slider musicSlider;
     [SerializeField] Slider sfxSlider;
 
-    [SerializeField] private Button[] menuButtons;
-    [SerializeField] int currentButtonIndex = 0;
 
     void Start()
     {
@@ -56,20 +54,6 @@ public class CanvasManager : MonoBehaviour
             GameManager.Instance.OnHealthValueChanged.AddListener(UpdateHealthBar);
         }
 
-        if (masterSlider != null)
-        {
-            masterSlider.onValueChanged.AddListener((value) => OnSliderValueChanged(value, "MasterVol"));
-        }
-
-        if (musicSlider != null)
-        {
-            musicSlider.onValueChanged.AddListener((value) => OnSliderValueChanged(value, "MusicVol"));
-        }
-
-        if (sfxSlider != null)
-        {
-            sfxSlider.onValueChanged.AddListener((value) => OnSliderValueChanged(value, "SFXVol"));
-        }
 
         InitializeButton(startButton, StartGame);
         InitializeButton(settingsButton, ShowSettingsMenu);
@@ -105,16 +89,37 @@ public class CanvasManager : MonoBehaviour
     void UpdateScoreText(int value)
     {
         scoreText.text = value.ToString();
-    } 
+    }
+
+    private Coroutine healthRoutine;
 
     void UpdateHealthBar(float currentHealth)
     {
-        if (healthBarImage != null && GameManager.Instance != null)
-        {
-            float fill = currentHealth / 100; 
-            healthBarImage.fillAmount = Mathf.Clamp01(fill); 
-        }
+        float targetFill = Mathf.Clamp01(currentHealth / 100f);
+        if (healthRoutine != null)
+            StopCoroutine(healthRoutine);
+
+        healthRoutine = StartCoroutine(SmoothHealthBar(targetFill));
     }
+
+    private IEnumerator SmoothHealthBar(float targetFill)
+    {
+        float startFill = healthBarImage.fillAmount;
+        float elapsed = 0f;
+        float duration = 0.5f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            healthBarImage.fillAmount = Mathf.Lerp(startFill, targetFill, elapsed / duration);
+            yield return null;
+        }
+
+        healthBarImage.fillAmount = targetFill; 
+    }
+
+
+
 
     void Update()
     {
@@ -181,6 +186,7 @@ public class CanvasManager : MonoBehaviour
     {
         SceneManager.LoadScene("Room_NarrowSmall_S"); ;
         Time.timeScale = 1.0f;
+        /*
         if (audioSource != null)
         {
             audioSource.Stop();
@@ -191,12 +197,9 @@ public class CanvasManager : MonoBehaviour
         {
             Debug.LogError("Audio Source is not assigned.");
         }
+        */ 
     }
 
-    void OnSliderValueChanged(float value, string volume)
-    {
-        audioMixer.SetFloat(volume, value - 80);
-    }
 
     private void AddPointerEnterEvent(EventTrigger trigger, UnityEngine.Events.UnityAction action)
     {
