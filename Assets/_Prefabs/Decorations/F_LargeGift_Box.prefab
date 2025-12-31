@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3349983385984533846}
   - component: {fileID: 3713152753895532768}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: F_LargeGift_Ribbon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3669536508161994633}
   - component: {fileID: 2190509381388254312}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: F_LargeGift_Box Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: 9177339958782102944}
   - component: {fileID: 6730110661423630351}
   - component: {fileID: 4315253283349936879}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: F_LargeGift_Box
   m_TagString: Gift
   m_Icon: {fileID: 0}
@@ -395,7 +395,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1309488123282208207}
   - component: {fileID: 2678686619311158953}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: F_BigGift_Lid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
