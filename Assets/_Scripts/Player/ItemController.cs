@@ -83,9 +83,6 @@ public class ItemController : MonoBehaviour
 
     // throwing impulse variable
     [SerializeField] private float throwImpulse = 3f; // 
-    [Header("Audio")]
-    [SerializeField] private AudioClip elfPickupSound; // ElfSound3
-
 
     private GameObject grabbedItem;
     private Vector2 facingDir = Vector2.right; // default facing right can change later
@@ -198,12 +195,6 @@ public class ItemController : MonoBehaviour
         grabbedItem.transform.SetParent(grabPoint);
         grabbedItem.transform.position = grabPoint.position;
 
-        //  PLAY ELF PICKUP SOUND TY CAMI
-        if (item.CompareTag("Elf") && elfPickupSound != null && AudioManager.Instance != null)
-        {
-            AudioManager.Instance.PlayOneShot(elfPickupSound, false);
-        }
-
         var rb = grabbedItem.GetComponent<Rigidbody2D>();
         var col = grabbedItem.GetComponent<Collider2D>();
 
@@ -214,8 +205,8 @@ public class ItemController : MonoBehaviour
             rb.bodyType = RigidbodyType2D.Kinematic;
             rb.linearVelocity = Vector2.zero;
             rb.angularVelocity = 0f;
-            rb.freezeRotation = true;
-            rb.gravityScale = 0f;
+            rb.freezeRotation = true;  //item wont wobble
+            rb.gravityScale = 0f;    // item steady (can also change in gui)
         }
     }
 
