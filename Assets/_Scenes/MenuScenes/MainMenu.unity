@@ -546,6 +546,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6248993001525093385, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8328388747614342486, guid: a0d815af71f28cb4d93805fdb29fedfd, type: 3}
+    - target: {fileID: 6248993001525093385, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6248993001525093385, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6248993001525093385, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901126364600285280, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_text
+      value: Buddy's Last Stand
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901126364600285280, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_fontSize
+      value: 54.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901126364600285280, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: c51772207a28a934da84e58beb2f66ff, type: 2}
+    - target: {fileID: 7901126364600285280, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 54.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901126364600285280, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1499188301728458949, guid: c51772207a28a934da84e58beb2f66ff, type: 2}
+    - target: {fileID: 7901126364600285280, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
