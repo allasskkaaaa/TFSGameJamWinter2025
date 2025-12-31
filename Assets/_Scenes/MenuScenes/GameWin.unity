@@ -218,7 +218,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1540238229370607222, guid: bad8d246553f1584689681f1233f7d01, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -185
+      value: -44
       objectReference: {fileID: 0}
     - target: {fileID: 1540238229370607222, guid: bad8d246553f1584689681f1233f7d01, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -666,7 +666,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 46.240204, y: -110.345825, z: -246.08612, w: -109.02417}
+  m_margin: {x: 146.56947, y: -53.749878, z: -230.47363, w: -109.02417}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
