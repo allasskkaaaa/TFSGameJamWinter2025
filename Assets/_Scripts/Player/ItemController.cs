@@ -250,7 +250,7 @@ public class ItemController : MonoBehaviour
             Breakables breakable = grabbedItem.GetComponent<Breakables>();
             if (breakable != null)
             {
-                breakable.ArmDestroyAfterThrow(1f); 
+                breakable.ArmDestroyAfterThrow(1f);
             }
         }
 
