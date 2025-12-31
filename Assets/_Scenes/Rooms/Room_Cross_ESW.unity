@@ -699,7 +699,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1594ce597f6a81846b69172eb2a63474, type: 3}
---- !u!1001 &7893488366299282538
+--- !u!1001 &1865093628123581468
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -710,10 +710,6 @@ PrefabInstance:
     - target: {fileID: 66183763793992974, guid: e4deb6760f56caf4cb0bc1b4a18c1753, type: 3}
       propertyPath: m_Name
       value: GameCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 4774415079413270262, guid: e4deb6760f56caf4cb0bc1b4a18c1753, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7315181708087238391, guid: e4deb6760f56caf4cb0bc1b4a18c1753, type: 3}
       propertyPath: m_Pivot.x
@@ -1044,7 +1040,7 @@ SceneRoots:
   - {fileID: 8702679376001377825}
   - {fileID: 378494005}
   - {fileID: 1411548474}
-  - {fileID: 7893488366299282538}
+  - {fileID: 1865093628123581468}
   - {fileID: 1129768021}
   - {fileID: 282725069}
   - {fileID: 343927377}

@@ -303,9 +303,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
-  velocityThreshold: 3
+  velocityThreshold: 1
   damageTaken: 10
   scoreOnBreak: 10
+  powerUpDropChance: 0.25
+  powerUpPrefabs:
+  - {fileID: 8917336449097542727, guid: d20ea12270331bd46b87140cd276b0ca, type: 3}
+  - {fileID: 1773372138420914977, guid: d289c3c129c6ffe489f299d9902e4435, type: 3}
+  - {fileID: 7972872400620913516, guid: 6604e0d7d748679489fdb332bfc3d9f0, type: 3}
 --- !u!61 &6730110661423630351
 BoxCollider2D:
   m_ObjectHideFlags: 0
