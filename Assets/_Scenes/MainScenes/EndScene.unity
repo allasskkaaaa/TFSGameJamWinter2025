@@ -466,6 +466,11 @@ MonoBehaviour:
   OnHealthValueChanged:
     m_PersistentCalls:
       m_Calls: []
+  health: 0
+  maxHealth: 100
+  OnMaxHealthValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &355388621
 Transform:
   m_ObjectHideFlags: 0
@@ -1061,7 +1066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b49198f942084169976aa188a1490cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerupModifier: {fileID: 11400000, guid: 9d59a5e615b6a4127a6b32de701af214, type: 2}
+  powerupModifier: {fileID: 11400000, guid: ac05164b0603e49f59274ff5d3755183, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

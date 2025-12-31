@@ -3,9 +3,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "HealthBuff", menuName = "PowerUps/HealthBuff")]
 public class HealthBuff : PowerupModifier
 {
-    public int healthIncrease;
+    public float healthIncrease;
     public override void Activate(GameObject target)
     {
-        GameManager.Instance.Health += healthIncrease;
+        //without exceeding MaxHealth
+        GameManager.Instance.Heal(healthIncrease);
     }
 }
