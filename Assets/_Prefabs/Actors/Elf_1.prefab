@@ -183,6 +183,7 @@ MonoBehaviour:
   grabMode: 1
   showDebugRays: 1
   throwImpulse: 20
+  elfPickupSound: {fileID: 8300000, guid: ef9712b9f7107f74f8ada4381df04cc1, type: 3}
 --- !u!96 &6851741628183508033
 TrailRenderer:
   serializedVersion: 3
