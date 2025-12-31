@@ -1,9 +1,9 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour
 {
     public RoomGenerator.Direction doorDirection;
-
     private void Start()
     {
         bool exists = RoomGenerator.Instance.HasDoor(doorDirection);

@@ -8,21 +8,42 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/_Scenes/MainScenes/GameScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/RaesTestScenes/TestScene 1.unity
     guid: 06e6185a2dc33ae448044c95b40ac54e
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/RaesTestScenes/TestScene 2.unity
-    guid: 1937227b5e4e74540a342099fbc20366
-  - enabled: 1
+    guid: e1ee9745266bc724a9973ebdd3f04db8
+  - enabled: 0
     path: Assets/_Scenes/RaesTestScenes/TestScene 3.unity
-    guid: c8b4ee0b2b6f6354b9032c18fba39d74
-  - enabled: 1
+    guid: fb62f1cfb1c57e74faea1dbdc5a909ae
+  - enabled: 0
     path: Assets/_Scenes/RaesTestScenes/TestScene 4.unity
-    guid: cc453adc19cae7249a97f645266c9f23
-  - enabled: 1
+    guid: 667827d19bea79645aec3567afc9a409
+  - enabled: 0
     path: Assets/_Scenes/RaesTestScenes/TestScene 5.unity
-    guid: ed02eff7e8d869f43b7c2a9c6be5186a
+    guid: d7acb88973d3e0845a51de87826cd9d9
+  - enabled: 1
+    path: Assets/_Scenes/Rooms/Room_Cross_ESW.unity
+    guid: aeb8f9ed1f9e4b047b7f40191a2d1bc6
+  - enabled: 1
+    path: Assets/_Scenes/Rooms/Room_Boss_N.unity
+    guid: cd44e359300b6b146a17d32f31d2d1e0
+  - enabled: 1
+    path: Assets/_Scenes/Rooms/Room_LargeLong_EW.unity
+    guid: 7adfffea411acc549a9e9e4854f8aaff
+  - enabled: 1
+    path: Assets/_Scenes/Rooms/Room_NarrowSmall_S.unity
+    guid: 50e9554ac7e270441babf72282ffafee
+  - enabled: 1
+    path: Assets/_Scenes/Rooms/Room_Square_NESW.unity
+    guid: 5146963335bb1504da1e15eced8dd5b1
+  - enabled: 1
+    path: Assets/_Scenes/Rooms/Room_SquareWindows_ESW.unity
+    guid: e24e7dfe67a6cbe4a9818b3993cfbf75
+  - enabled: 1
+    path: Assets/_Scenes/Rooms/Room_TWindows_NESW.unity
+    guid: b8134ba538d8d464b89bdbecee8e1a4f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

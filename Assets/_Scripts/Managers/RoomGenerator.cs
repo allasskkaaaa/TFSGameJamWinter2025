@@ -77,10 +77,14 @@ public class RoomGenerator : MonoBehaviour
         List<string> middleScenes = scenes.GetRange(1, scenes.Count - 3);
         Shuffle(middleScenes);
 
-        // Startng connections from START room will always be 1-2 
-        int startConnections = Mathf.Min(2, middleScenes.Count);
-        for (int i = 0; i < startConnections; i++)
-            ConnectAuto(start, middleScenes[i]);
+        // Startng connections from START room will always be 1-2  NVM JUST ONE
+        // START room: EXACTLY ONE door, SOUTH only
+        if (middleScenes.Count > 0)
+        {
+            string firstRoom = middleScenes[0];
+            ConnectStartSouth(start, firstRoom);
+        }
+
 
         //Random connections between MIDDLE rooms
         foreach (var scene in middleScenes)
@@ -98,11 +102,14 @@ public class RoomGenerator : MonoBehaviour
             }
         }
 
-        // Pre-boss connects to boss AND at least one middle room (the previous) 
-        ConnectAuto(preBoss, boss);
+        // PRE-BOSS -> BOSS (forced directions)
+        // Boss ONLY has South
+        ConnectBossSouth(boss, preBoss);
 
+        // Pre-boss connects to at least one middle room
         if (middleScenes.Count > 0)
             ConnectAuto(preBoss, middleScenes[UnityEngine.Random.Range(0, middleScenes.Count)]);
+
 
         Debug.Log("Room graph generated.");
         PrintGraph();
@@ -111,9 +118,14 @@ public class RoomGenerator : MonoBehaviour
     // Connecting two rooms with opposite directions (dear lord pls work)
     void ConnectAuto(string a, string b)
     {
-        if (a == b) return;
+        // NEVER add doors to START or BOSS automatically
+        if (a == scenes[0] || b == scenes[0]) return;
+        if (a == scenes[^1] || b == scenes[^1]) return;
 
+        if (a == b) return;
         if (graph[a].Count >= 4 || graph[b].Count >= 4) return;
+
+
 
         List<Direction> possibleDirs = new List<Direction>();
 
@@ -133,6 +145,23 @@ public class RoomGenerator : MonoBehaviour
         graph[a][dirA] = b;
         graph[b][dirB] = a;
     }
+
+    void ConnectStartSouth(string start, string target)
+    {
+        // Force: start -> South -> target
+        graph[start][Direction.South] = target;
+        graph[target][Direction.North] = start;
+    }
+
+    void ConnectBossSouth(string boss, string fromRoom)
+    {
+        // Force: fromRoom -> North -> boss
+        // Force: boss -> South -> fromRoom
+        graph[boss][Direction.South] = fromRoom;
+        graph[fromRoom][Direction.North] = boss;
+    }
+
+
 
 
     // Get a random free direction in the given scene 
