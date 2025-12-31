@@ -307,6 +307,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1540238229370607222, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1540238229370607222, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1540238229370607222, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1540238229370607222, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -174
+      objectReference: {fileID: 0}
+    - target: {fileID: 1540238229370607222, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 74
+      objectReference: {fileID: 0}
+    - target: {fileID: 1540238229370607222, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195072916634206253, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -30
+      objectReference: {fileID: 0}
     - target: {fileID: 5646203683328799474, guid: bad8d246553f1584689681f1233f7d01, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -405,19 +433,40 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7901126364600285280, guid: bad8d246553f1584689681f1233f7d01, type: 3}
       propertyPath: m_text
-      value: You Lost! Try Again?
+      value: Thanks to your shinanegans, all the elves were kicked from the workshop.
+        You are now hated among the elvish populace, congrats!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901126364600285280, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_fontSize
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 7901126364600285280, guid: bad8d246553f1584689681f1233f7d01, type: 3}
       propertyPath: m_margin.w
-      value: -348.20807
+      value: -169.51476
       objectReference: {fileID: 0}
     - target: {fileID: 7901126364600285280, guid: bad8d246553f1584689681f1233f7d01, type: 3}
       propertyPath: m_margin.x
-      value: -68.30945
+      value: 39.497223
       objectReference: {fileID: 0}
     - target: {fileID: 7901126364600285280, guid: bad8d246553f1584689681f1233f7d01, type: 3}
       propertyPath: m_margin.z
-      value: -129.67981
+      value: -117.865295
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901126364600285280, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: c51772207a28a934da84e58beb2f66ff, type: 2}
+    - target: {fileID: 7901126364600285280, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901126364600285280, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1499188301728458949, guid: c51772207a28a934da84e58beb2f66ff, type: 2}
+    - target: {fileID: 7901126364600285280, guid: bad8d246553f1584689681f1233f7d01, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

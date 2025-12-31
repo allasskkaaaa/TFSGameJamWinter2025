@@ -1595,7 +1595,7 @@ TextureImporter:
         width: 10
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1617,7 +1617,7 @@ TextureImporter:
         width: 7
         height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1639,7 +1639,7 @@ TextureImporter:
         width: 10
         height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1648,6 +1648,28 @@ TextureImporter:
       bones: []
       spriteID: ac562909c7fdc7c40ba087cd148f0876
       internalID: 1458991071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Decorations_0
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 256
+        width: 103
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c0991cb9e18f344f9a1df8272f950d7
+      internalID: 1009927144
       vertices: []
       indices: 
       edges: []
@@ -1672,6 +1694,7 @@ TextureImporter:
       Candle_Light: 97731798
       Candle_Stick: -1841550332
       ConveyorBelt: 904256221
+      Decorations_0: 1009927144
       Decorations_19: 443069499
       Decorations_22: 1940897871
       Decorations_25: 2113624463
