@@ -219,7 +219,7 @@ public class Enemy : Health
         }
         else
         {
-            CurrentState = EnemyStates.Idle;
+            CurrentState = EnemyStates.Chase;
         }
     }
     // THEIR ATTACK METHODS
@@ -358,13 +358,20 @@ public class Enemy : Health
     private void ShootProjectile()
     {
         if (Time.time < lastAttackTime + attackCooldown) return;
-
         lastAttackTime = Time.time;
 
-        if (projectilePrefab == null || firePoint == null) return;
+        if (projectilePrefab == null || firePoint == null || player == null) return;
 
-        Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+        Vector3 targetPos = player.position;
+        GameObject bomb = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
+        Bomb bombScript = bomb.GetComponent<Bomb>();
+        if (bombScript != null)
+        {
+            bombScript.LaunchTowards(targetPos);
+        }
     }
+
+
 
     // DYING FUNCTION 
 
