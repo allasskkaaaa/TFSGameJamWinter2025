@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3349983385984533846}
   - component: {fileID: 3713152753895532768}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: F_LargeGift_Ribbon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3669536508161994633}
   - component: {fileID: 2190509381388254312}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: F_LargeGift_Box Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: 9177339958782102944}
   - component: {fileID: 6730110661423630351}
   - component: {fileID: 4315253283349936879}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: F_LargeGift_Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -303,7 +303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
-  velocityThreshold: 5
+  velocityThreshold: 3
   damageTaken: 10
   scoreOnBreak: 10
 --- !u!61 &6730110661423630351
@@ -378,7 +378,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &7947254399519183471
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,7 +389,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1309488123282208207}
   - component: {fileID: 2678686619311158953}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: F_BigGift_Lid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
