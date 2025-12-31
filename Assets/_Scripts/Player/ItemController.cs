@@ -141,51 +141,45 @@ public class ItemController : MonoBehaviour
     {
         if (!rayPoint) rayPoint = transform;
 
-        if (grabMode == GrabMode.FacingOnly)
+        Collider2D[] hits = Physics2D.OverlapCircleAll(
+            rayPoint.position,
+            rayDistance,
+            grabMask
+        );
+
+        if (hits.Length == 0) return;
+
+        Collider2D best = null;
+        int bestPriority = -1;
+        float bestDist = float.MaxValue;
+
+        foreach (var hit in hits)
         {
-            // Single ray in facing direction
-            RaycastHit2D hit = Physics2D.Raycast(rayPoint.position, facingDir, rayDistance, grabMask);
-            if (hit.collider != null)
+            if (!hit.attachedRigidbody) continue;
+
+            int priority = GetPriority(hit.gameObject);
+            float dist = Vector2.Distance(rayPoint.position, hit.transform.position);
+
+            bool isBetter =
+                priority > bestPriority ||
+                (priority == bestPriority && dist < bestDist);
+
+            if (isBetter)
             {
-                Grab(hit.collider.gameObject);
-            }
-        }
-        else // AllDirections with priority
-        {
-            Vector2[] dirs = { Vector2.right, Vector2.left, Vector2.up, Vector2.down };
-
-            RaycastHit2D bestHit = default;
-            int bestPriority = -1;
-            float bestDist = float.MaxValue;
-
-            foreach (var dir in dirs)
-            {
-                RaycastHit2D hit = Physics2D.Raycast(rayPoint.position, dir, rayDistance, grabMask);
-                if (hit.collider == null) continue;
-
-                int priority = GetPriority(hit.collider.gameObject);
-
-                bool isBetter =
-                    priority > bestPriority ||
-                    (priority == bestPriority && hit.distance < bestDist);
-
-                if (isBetter)
-                {
-                    bestPriority = priority;
-                    bestDist = hit.distance;
-                    bestHit = hit;
-                }
-            }
-
-            if (bestHit.collider != null)
-            {
-                facingDir = (bestHit.point - (Vector2)rayPoint.position).normalized;
-                facingDir = SnapToCardinal(facingDir);
-                Grab(bestHit.collider.gameObject);
+                bestPriority = priority;
+                bestDist = dist;
+                best = hit;
             }
         }
 
+        if (best != null)
+        {
+            facingDir = (best.transform.position - rayPoint.position).normalized;
+            facingDir = SnapToCardinal(facingDir);
+            Grab(best.gameObject);
+        }
     }
+
 
     private Vector2 SnapToCardinal(Vector2 v)
     {

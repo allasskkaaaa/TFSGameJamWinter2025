@@ -19,6 +19,7 @@ public class BossController : Health
     public float moveDistanceBeforeBomb = 3f;
 
     private Transform player;
+    private Animator animator; 
     private NavMeshAgent agent;
 
     private enum EnemyStates { Idle, Moving, Laser, Dead }
@@ -28,8 +29,10 @@ public class BossController : Health
 
     public override void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Player")?.transform;
         agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
+
         if (agent != null)
         {
             agent.updateUpAxis = false;
@@ -50,9 +53,12 @@ public class BossController : Health
         maxHealth = 100;
         health = 100;
 
+        PlayAnim("Santa_Idle");
+
         currentState = EnemyStates.Moving;
         StartCoroutine(BombLoop(initialIdle: true));
     }
+
 
     private IEnumerator BombLoop(bool initialIdle = false)
     {
@@ -73,8 +79,12 @@ public class BossController : Health
 
             // Move boss
             Vector3 moveTarget = GetRandomNearbyPosition();
+
             if (agent != null)
             {
+                animator.SetBool("isRunning", true); 
+                PlayAnim("Santa_Run");
+
                 agent.isStopped = false;
                 agent.SetDestination(moveTarget);
 
@@ -84,8 +94,12 @@ public class BossController : Health
                     timer += Time.deltaTime;
                     yield return null;
                 }
+
                 agent.isStopped = true;
+                animator.SetBool("isRunning", false);
+                PlayAnim("Santa_Attack");
             }
+
 
             // Throw bomb
             ThrowBombAtPlayer();
@@ -95,19 +109,58 @@ public class BossController : Health
 
     public void OnBossHit()
     {
-        if (currentState == EnemyStates.Dead || currentState == EnemyStates.Laser)
-            return;
+        if (currentState == EnemyStates.Dead) return;
 
         if (health <= 0)
         {
             currentState = EnemyStates.Dead;
-            Debug.Log("BOSS DEFEATED!");
-            GameManager.Instance.SwitchState(GameManager.GameState.GameWin);
+            StartCoroutine(DeathSequence());
             return;
         }
 
-        StartCoroutine(HitAndLaserSequence());
+        StartCoroutine(FallThenIdle());
+
+        if (currentState != EnemyStates.Laser)
+            StartCoroutine(HitAndLaserSequence());
     }
+
+
+    IEnumerator FallThenIdle()
+    {
+        PlayAnim("Santa_Die_Fall");
+
+        // wait for the fall animation to finish
+        float fallLength = animator.GetCurrentAnimatorStateInfo(0).length;
+        yield return new WaitForSeconds(fallLength);
+
+        // only return to idle if still alive
+        if (currentState != EnemyStates.Dead)
+        {
+            PlayAnim("Santa_Idle");
+        }
+    }
+
+
+    private IEnumerator DeathSequence()
+    {
+        if (agent != null)
+        {
+            agent.isStopped = true;
+            animator.SetBool("isRunning", false);
+        }
+            
+
+        PlayAnim("Santa_Die_Fall");
+        yield return new WaitForSeconds(1.2f);
+
+        PlayAnim("Santa_Die_Explode");
+        yield return new WaitForSeconds(1f);
+
+        GameManager.Instance.SwitchState(GameManager.GameState.GameWin);
+        Destroy(gameObject);
+    }
+
+
 
     private Vector3 GetRandomNearbyPosition()
     {
@@ -121,18 +174,23 @@ public class BossController : Health
     {
         if (bombPrefab == null || firePoint == null || player == null) return;
 
+        PlayAnim("Santa_Attack");
+
         GameObject bomb = Instantiate(bombPrefab, firePoint.position, Quaternion.identity);
         Bomb bombScript = bomb.GetComponent<Bomb>();
         if (bombScript != null)
             bombScript.LaunchTowards(player.position);
     }
 
+
     private IEnumerator HitAndLaserSequence()
     {
         currentState = EnemyStates.Laser;
 
-        // Idle before laser
+        PlayAnim("Santa_Idle");
         yield return new WaitForSeconds(idleAfterHit);
+
+        PlayAnim("Santa_Attack");
 
         float timer = 0f;
         laserActive = true;
@@ -159,9 +217,9 @@ public class BossController : Health
                 Vector3 rayDir = Quaternion.Euler(0, 0, angle) * Vector3.right;
 
                 RaycastHit2D hit = Physics2D.Raycast(start, rayDir, shootRange, playerMask);
-                Vector3 endPoint = (hit != null && hit.collider != null) ? hit.point : start + rayDir * shootRange; // If it hit anyting in the way, the raycast ends there :000 
+                Vector3 endPoint = hit.collider ? hit.point : start + rayDir * shootRange;
 
-                if (hit.collider != null && hit.collider.CompareTag("Player"))
+                if (hit.collider && hit.collider.CompareTag("Player"))
                     GameManager.Instance.Health -= laserDamage * Time.deltaTime;
 
                 DrawLaser(start, endPoint, i);
@@ -173,9 +231,11 @@ public class BossController : Health
 
         if (laser != null) laser.enabled = false;
         laserActive = false;
-
-        currentState = EnemyStates.Moving; // back to bomb throwing
+        animator.SetBool("isRunning", true); 
+        PlayAnim("Santa_Run");
+        currentState = EnemyStates.Moving;
     }
+
 
     private void DrawLaser(Vector3 start, Vector3 end, int rayIndex)
     {
@@ -187,4 +247,15 @@ public class BossController : Health
         laser.SetPosition(rayIndex * 2, start);
         laser.SetPosition(rayIndex * 2 + 1, end);
     }
+
+    private void PlayAnim(string animName)
+    {
+        if (animator == null) 
+        { 
+            Debug.Log("No Animator!"); 
+            return; 
+        }
+        animator.Play(animName);
+    }
+
 }
